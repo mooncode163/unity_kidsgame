@@ -1,0 +1,80 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+public class AppString
+{
+    public const string STR_FONT_NAME = "Arial";
+
+
+    //language
+    public const string APP_NAME = "APP_NAME";
+    public const string APP_NAME_HD = "APP_NAME_HD";
+    public const string STR_SETTING = "STR_SETTING";
+    public const string STR_MORE = "STR_MORE";
+    public const string STR_APPCENTER = "STR_APPCENTER";
+    public const string STR_LANGUAGE = "STR_LANGUAGE";
+    public const string STR_SHOP = "STR_SHOP";
+
+    //place
+    public const string STR_PLACE = "STR_PLACE";
+    //setting
+    public const string STR_SETTING_COMMENT = "STR_SETTING_COMMENT";
+    public const string STR_SETTING_VERSION = "STR_SETTING_VERSION";
+    public const string STR_SETTING_LANGUAGE = "STR_SETTING_LANGUAGE";
+    public const string STR_SETTING_BACKGROUND_MUSIC = "STR_SETTING_BACKGROUND_MUSIC";
+    public const string STR_SETTING_NOAD = "STR_SETTING_NOAD";
+    public const string STR_SETTING_RESTORE_IAP = "STR_SETTING_RESTORE_IAP";
+    //uiviewalert
+    public const string STR_UIVIEWALERT_YES = "STR_UIVIEWALERT_YES";
+    public const string STR_UIVIEWALERT_NO = "STR_UIVIEWALERT_NO";
+    public const string STR_UIVIEWALERT_TITLE_UPDATE_VERSION = "STR_UIVIEWALERT_TITLE_UPDATE_VERSION";
+
+    public const string STR_UIVIEWALERT_TITLE_APP_EXIT = "STR_UIVIEWALERT_TITLE_APP_EXIT";
+    public const string STR_UIVIEWALERT_MSG_APP_EXIT = "STR_UIVIEWALERT_MSG_APP_EXIT";
+
+    public const string STR_UIVIEWALERT_MSG_NEWEST_VERSION = "STR_UIVIEWALERT_MSG_NEWEST_VERSION";
+    public const string STR_UIVIEWALERT_TITLE_USERCOMMENT = "STR_UIVIEWALERT_TITLE_USERCOMMENT";
+    public const string STR_UIVIEWALERT_MSG_USERCOMMENT = "STR_UIVIEWALERT_MSG_USERCOMMENT";
+    public const string STR_UIVIEWALERT_YES_USERCOMMENT = "STR_UIVIEWALERT_YES_USERCOMMENT";
+    public const string STR_UIVIEWALERT_NO_USERCOMMENT = "STR_UIVIEWALERT_NO_USERCOMMENT";
+
+    //userguide
+    public const string STR_UIVIEWALERT_TITLE_USER_GUIDE = "STR_UIVIEWALERT_TITLE_USER_GUIDE";
+    public const string STR_UIVIEWALERT_MSG_USER_GUIDE = "STR_UIVIEWALERT_MSG_USER_GUIDE";
+    public const string STR_UIVIEWALERT_YES_USER_GUIDE = "STR_UIVIEWALERT_YES_USER_GUIDE";
+
+
+    public const string STR_UIVIEWALERT_TITLE_SHOP_START_BUY = "STR_UIVIEWALERT_TITLE_SHOP_START_BUY";
+    public const string STR_UIVIEWALERT_MSG_SHOP_START_BUY = "STR_UIVIEWALERT_MSG_SHOP_START_BUY";
+    public const string STR_UIVIEWALERT_YES_SHOP_START_BUY = "STR_UIVIEWALERT_YES_SHOP_START_BUY";
+
+
+    public const string STR_UIVIEWALERT_TITLE_SHOP_RESTORE_BUY = "STR_UIVIEWALERT_TITLE_SHOP_RESTORE_BUY";
+    public const string STR_UIVIEWALERT_MSG_SHOP_RESTORE_BUY = "STR_UIVIEWALERT_MSG_SHOP_RESTORE_BUY";
+    public const string STR_UIVIEWALERT_YES_SHOP_RESTORE_BUY = "STR_UIVIEWALERT_YES_SHOP_RESTORE_BUY";
+
+    public const string STR_UIVIEWALERT_TITLE_SHOP_BUY_FAIL = "STR_UIVIEWALERT_TITLE_SHOP_BUY_FAIL";
+    public const string STR_UIVIEWALERT_MSG_SHOP_BUY_FAIL = "STR_UIVIEWALERT_MSG_SHOP_BUY_FAIL";
+    public const string STR_UIVIEWALERT_YES_SHOP_BUY_FAIL = "STR_UIVIEWALERT_YES_SHOP_BUY_FAIL";
+
+
+    public const string STR_UIVIEWALERT_TITLE_GAME_FINISH = "STR_UIVIEWALERT_TITLE_GAME_FINISH";
+    public const string STR_UIVIEWALERT_MSG_GAME_FINISH = "STR_UIVIEWALERT_MSG_GAME_FINISH";
+    public const string STR_UIVIEWALERT_YES_GAME_FINISH = "STR_UIVIEWALERT_YES_GAME_FINISH";
+    public const string STR_UIVIEWALERT_NO_GAME_FINISH = "STR_UIVIEWALERT_NO_GAME_FINISH";
+
+
+    public const string STR_UIVIEWALERT_TITLE_NOT_ENOUGH_GOLD = "STR_UIVIEWALERT_TITLE_NOT_ENOUGH_GOLD";
+    public const string STR_UIVIEWALERT_MSG_NOT_ENOUGH_GOLD = "STR_UIVIEWALERT_MSG_NOT_ENOUGH_GOLD";
+    public const string STR_UIVIEWALERT_YES_NOT_ENOUGH_GOLD = "STR_UIVIEWALERT_YES_NOT_ENOUGH_GOLD";
+    public const string STR_UIVIEWALERT_NO_NOT_ENOUGH_GOLD = "STR_UIVIEWALERT_NO_NOT_ENOUGH_GOLD";
+
+
+    //key
+    public const string STR_KEY_NOT_FIRST_RUN = "STR_KEY_NOT_FIRST_RUN";
+    public const string STR_KEY_BACKGROUND_MUSIC = "KEY_BACKGROUND_MUSIC";
+    public const string KEY_ENABLE_PLAYSOUND = "KEY_ENABLE_PLAYSOUND";
+    public const string STR_KEY_LANGUAGE = "STR_KEY_LANGUAGE";
+    public const string STR_KEY_COMMENT_VERSION = "key_comment_";
+    public const string STR_KEY_COMMENT_LAST_TIME = "key_comment_last_time";
+    public const string STR_KEY_USER_GUIDE = "key_comment_user_guide_";
+}

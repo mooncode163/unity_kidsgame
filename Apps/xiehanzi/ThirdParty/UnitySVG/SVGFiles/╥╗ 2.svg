@@ -1,0 +1,33 @@
+<svg width="400" height="400"  xmlns="http://www.w3.org/2000/svg">
+<!-- <svg enable-background="new 0 0 400 400" viewBox="0 0 400 400"   xmlns="http://www.w3.org/2000/svg"> -->
+    <defs>
+        <clipPath id="mask-1">
+            <path d="M 518 382 Q 572 385 623 389 Q 758 399 900 383 Q 928 379 935 390 Q 944 405 930 419 Q 896 452 845 475 Q 829 482 798 473 Q 723 460 480 434 Q 180 409 137 408 Q 130 408 124 408 Q 108 408 106 395 Q 105 380 127 363 Q 146 348 183 334 Q 195 330 216 338 Q 232 344 306 354 Q 400 373 518 382 Z">
+            </path>
+        </clipPath>
+        <clipPath id="mask-2">
+            <path d="M 518 382 Q 572 385 623 389 Q 758 399 900 383 Q 928 379 935 390 Q 944 405 930 419 Q 896 452 845 475 Q 829 482 798 473 Q 723 460 480 434 Q 180 409 137 408 Q 130 408 124 408 Q 108 408 106 395 Q 105 380 127 363 Q 146 348 183 334 Q 195 330 216 338 Q 232 344 306 354 Q 400 373 518 382 Z">
+            </path>
+        </clipPath>
+        <clipPath id="mask-3">
+            <path d="M 518 382 Q 572 385 623 389 Q 758 399 900 383 Q 928 379 935 390 Q 944 405 930 419 Q 896 452 845 475 Q 829 482 798 473 Q 723 460 480 434 Q 180 409 137 408 Q 130 408 124 408 Q 108 408 106 395 Q 105 380 127 363 Q 146 348 183 334 Q 195 330 216 338 Q 232 344 306 354 Q 400 373 518 382 Z">
+            </path>
+        </clipPath>
+    </defs>
+    <g transform="
+		translate(20, 336.40625)
+		scale(0.3515625, -0.3515625)
+	  ">
+
+        <!-- <g style="opacity: 0; display: none;">
+					<path clip-path="url(file:///F:/sourcecode/web/wordwrite/hanzi-writer/demo/%E4%B8%80.html#mask-2)" d="M 25 421 L 193 372 L 417 402 L 827 434 L 920 401" stroke="rgba(85,85,85,1)" stroke-width="200" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="910.9281897070704,910.9281897070704" style="opacity: 1; stroke-dashoffset: 0;"></path>
+				</g> -->
+        <g style="opacity: 1;">
+            <path clip-path="url(#mask-3)" d="M 25 421 L 193 372 L 417 402 L 827 434 L 920 401" stroke="rgba(170,170,255,1)" stroke-width="200" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="910.9281897070704,910.9281897070704" style="opacity: 1; stroke-dashoffset: 0;"></path>
+        </g> -->
+
+        <g style="opacity: 1;">
+            <path clip-path="url(#mask-1)" d="M 25 421 L 193 372 L 417 402 L 827 434 L 920 401 " stroke="rgba(255,0,0,1)" stroke-width="100" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="910.9281897070704,910.9281897070704" style="opacity: 1; stroke-dashoffset: 0;"></path>
+        </g>
+    </g>
+</svg>
