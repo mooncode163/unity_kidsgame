@@ -38,11 +38,20 @@ public class CloudRes
         get
         {
             string ret = "";
+             string dirRoot = Application.temporaryCachePath;
             if (enable)
             {
-                string dirRoot = Application.temporaryCachePath;
+               
                 ret = dirRoot + "/" + Common.GAME_RES_DIR;
-                if (Application.isEditor)
+                //创建文件夹
+                // FileUtil.CreateDir(ret);
+            }
+            else
+            {
+                ret = Common.GAME_RES_DIR;
+            }
+
+              if (Application.isEditor)
                 {
                     // F:\sourcecode\unity\product\kidsgame\kidsgameUnity\Assets
                     // 模拟测试 debug
@@ -61,15 +70,7 @@ public class CloudRes
                         ret = dirRoot + "/" + Common.appKeyName;
                     }
                 }
-
-                //创建文件夹
-                // FileUtil.CreateDir(ret);
-            }
-            else
-            {
-                ret = Common.GAME_RES_DIR;
-            }
-            // Debug.Log("CloudRes rootPath=" + ret);
+            Debug.Log("CloudRes rootPath=" + ret);
             return ret;
         }
     }
@@ -78,16 +79,15 @@ public class CloudRes
     {
         get
         {
-            if (Common.BlankString(Config.main.urlGameRes))
+                     if (Common.BlankString(Config.main.urlGameRes))
             {
                 return false;
-            }
-
-            if (Application.isEditor)
+            } 
+              if (Application.isEditor)
             {
                 return true;
             }
-
+   
             if (Config.main.channel == Source.GP)
             {
                 return true;

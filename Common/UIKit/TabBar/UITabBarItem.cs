@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 public delegate void OnUITabBarItemClickDelegate(UITabBarItem ui);
 public class UITabBarItem : UIView
 {
+    float animaeTime = 0.3f;
+    private bool isActive = false;//true代表正在执行翻转，不许被打断
     public UIImage imageBg;
     public UIText textTitle;
     public int index;
- 
+
     public string keyColorSel;
 
     public OnUITabBarItemClickDelegate callbackClick { get; set; }
@@ -42,13 +45,24 @@ public class UITabBarItem : UIView
         this.LayOut();
     }
 
-     public void SelectItem(bool isSel)
+    public void SelectItem(bool isSel)
     {
-        textTitle.UpdateColorByKey(isSel?keyColorSel:keyColor);
+        textTitle.UpdateColorByKey(isSel ? keyColorSel : keyColor);
         // textTitle.color = (isSel?Color.white:Color.yellow);
     }
 
     public void OnClickBtnItem()
+    {
+        StartAnimate();
+        Invoke("OnAnimateEnd", animaeTime * 2);
+
+    }
+    public override void UpdateLanguage()
+    {
+        Debug.Log("UITabBarItem UpdateLanguage ");
+        base.UpdateLanguage();
+    }
+    public void OnAnimateEnd()
     {
         Debug.Log("UITabBarItem OnClickBtnItem ");
         if (callbackClick != null)
@@ -57,9 +71,28 @@ public class UITabBarItem : UIView
             callbackClick(this);
         }
     }
-       public override void UpdateLanguage()
+    public void StartAnimate()
     {
-        Debug.Log("UITabBarItem UpdateLanguage ");
-        base.UpdateLanguage();
+        if (isActive)
+            return;
+        StartCoroutine(AnimatFlip());
     }
+    /// <summary>
+    /// 翻转到背面
+    /// </summary>
+    IEnumerator AnimatFlip()
+    {
+        GameObject mFront = this.gameObject;//卡牌正面
+        GameObject mBack = this.gameObject;//卡牌背面
+        mFront.transform.eulerAngles = Vector3.zero;
+        // mBack.transform.eulerAngles = new Vector3(0, 90, 0);
+        isActive = true;
+        mFront.transform.DORotate(new Vector3(0, 90, 0), animaeTime);
+        for (float i = animaeTime; i >= 0; i -= Time.deltaTime)
+            yield return 0;
+        mBack.transform.DORotate(new Vector3(0, 0, 0), animaeTime);
+        isActive = false;
+
+    }
+
 }
