@@ -21,6 +21,15 @@ public class UIKitEditor : Editor
 
     }
 
+       //定义弹出当前窗口的菜单位置  
+    //[MenuItem("Window/My Window")]
+     [MenuItem(KEY_MENU_GameObject_UI + "/CreateController", false, 4)] 
+    static void CreateController()
+    {
+        //弹出窗口
+        EditorWindow.GetWindow(typeof(UIEditorCreateController));
+    }
+
     [MenuItem(KEY_MENU_GameObject_UI + "/UIView", false, 4)]
     static void CreateUIView()
     {

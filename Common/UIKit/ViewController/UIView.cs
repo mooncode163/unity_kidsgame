@@ -273,4 +273,11 @@ public class UIView : MonoBehaviour
 
         return ret;
     }
+
+     public void SetActive(bool isActive)
+    {
+        this.gameObject.SetActive(isActive);
+        LayOut();
+    }
+
 }

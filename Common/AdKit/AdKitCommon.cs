@@ -46,7 +46,7 @@ public class AdKitCommon : MonoBehaviour
             main = this;
         }
         isAdVideoFinish = false;
-        enableBanner = true;
+        // enableBanner = true;
     }
 
     // Use this for initialization
