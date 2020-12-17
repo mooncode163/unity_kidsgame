@@ -49,14 +49,15 @@ public class Common
         get
         {
             bool ret = false;
-#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
+// #if UNITY_STANDALONE_WIN && !UNITY_EDITOR
+//         ret = true;
+// #endif
+
+// UNITY_STANDALONE_OSX UNITY_STANDALONE_WIN UNITY_STANDALONE
+#if UNITY_STANDALONE  && !UNITY_EDITOR
         ret = true;
 #endif
-
-#if UNITY_STANDALONE_OSX && !UNITY_EDITOR
-        ret = true;
-#endif
-
+// ret = true;
             return ret;
         }
     }

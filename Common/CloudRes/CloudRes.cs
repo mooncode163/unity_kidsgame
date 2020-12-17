@@ -51,7 +51,7 @@ public class CloudRes
                 ret = Common.GAME_RES_DIR;
             }
 
-              if (Application.isEditor)
+              if (Application.isEditor||GameManager.main.isLoadGameScreenShot)
                 {
                     // F:\sourcecode\unity\product\kidsgame\kidsgameUnity\Assets
                     // 模拟测试 debug
@@ -79,6 +79,12 @@ public class CloudRes
     {
         get
         {
+
+
+           if (GameManager.main.isLoadGameScreenShot)
+            {
+                return false;
+            } 
                      if (Common.BlankString(Config.main.urlGameRes))
             {
                 return false;

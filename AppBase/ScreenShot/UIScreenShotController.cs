@@ -153,7 +153,7 @@ public class UIScreenShotController : UIView
         }
         int w_new = w;
         int h_new = h;
-        if (Common.isWin)
+       if (Common.isWin)
         {
             //windows 超出屏幕不显示,需要適配屏幕大小
             float scalex = ScreenDeviceInfo.WIDTH_SCREEN_PC * 1.0f / w;

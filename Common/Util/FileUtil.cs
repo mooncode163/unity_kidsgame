@@ -590,6 +590,11 @@ public class FileUtil
         }
 
     }
+
+     static public void CopyOneFile(string src, string dst, bool rewrite=true)
+    {
+        File.Copy(src, dst, rewrite);
+    }
     static public void CopyFile(System.IO.DirectoryInfo path, string desPath)
     {
         string sourcePath = path.FullName;
