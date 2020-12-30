@@ -74,7 +74,7 @@ public class AppVersionBase
 
             if (isFirstCreat)
             {
-                appCheckForAppstore = true;
+                // appCheckForAppstore = true;
             }
             int ret = string.Compare(appver, strVersionStore);
             Debug.Log("Appversion stroe:version:" + strVersionStore + " ret=" + ret);

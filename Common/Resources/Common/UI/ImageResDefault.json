@@ -148,7 +148,6 @@
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate44.png"
     },
     "CloudProgressFt"   : {
-        "board" : "24,24,24,24",
         "path" : "Common/UI/UIKit/UIProgress/CloudProgressFt.png"
     },
     "loading_animate25" : {
@@ -194,7 +193,6 @@
         "path" : "Common/UI/Share/ShareCellBgBlue.png"
     },
     "CloudProgressBg"   : {
-        "board" : "24,24,24,24",
         "path" : "Common/UI/UIKit/UIProgress/CloudProgressBg.png"
     },
     "loading_animate47" : {
