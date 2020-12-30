@@ -44,6 +44,7 @@ public class HuaweiAppGalleryApi
             Debug.Log("Task Async Executed");
             while (Common.BlankString(accessToken))
             {
+                Debug.Log("wait for accessToken");
                 Thread.Sleep(10);
             }
         });
@@ -115,6 +116,7 @@ public class HuaweiAppGalleryApi
             Debug.Log("Task Async Executed");
             while (Common.BlankString(appVersion))
             {
+                Debug.Log("waiting for appVersion");
                 Thread.Sleep(10);
             }
         });
@@ -126,7 +128,7 @@ public class HuaweiAppGalleryApi
     void OnRequestFinishedVersion(HTTPRequest req, HTTPResponse response)
     {
         Debug.Log("Task HuaweiAppGalleryApi OnRequestFinishedVersion");
-        if (response.IsSuccess)
+        if (response!=null&&response.IsSuccess)
         {
 
             string str = Encoding.UTF8.GetString(response.Data);
@@ -169,6 +171,7 @@ public class HuaweiAppGalleryApi
         }
         else
         {
+            appVersion = "0.0.0";
             Debug.Log("Task HuaweiAppGalleryApi OnRequestFinishedVersion fail");
         }
 
@@ -176,20 +179,26 @@ public class HuaweiAppGalleryApi
 
     void OnRequestFinishedToken(HTTPRequest req, HTTPResponse response)
     {
-
-        if (response.IsSuccess)
+        // if(response==null)
+        // {
+        //        accessToken = "access_token";
+        //     Debug.Log("HuaweiAppGalleryApi OnRequestFinishedToken response null");
+        //     return;
+        // }
+        if (response!=null&&response.IsSuccess)
         {
             string str = Encoding.UTF8.GetString(response.Data);
             JsonData root = JsonMapper.ToObject(str);
             accessToken = (string)root["access_token"];
-            Debug.Log("HuaweiAppGalleryApi OnRequestFinished accessToken=" + accessToken);
+            Debug.Log("HuaweiAppGalleryApi OnRequestFinishedToken accessToken=" + accessToken);
             Debug.Log("Task OnRequestFinished accessToken=" + accessToken);
             // GetVersion(Config.main.appId);
             // GetVersion("103066765");
         }
         else
         {
-            Debug.Log("HuaweiAppGalleryApi OnRequestFinished fail");
+            accessToken = "access_token";
+            Debug.Log("HuaweiAppGalleryApi OnRequestFinishedToken fail");
         }
 
 
