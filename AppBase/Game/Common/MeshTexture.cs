@@ -24,6 +24,7 @@ public class MeshTexture : UIView
     /// </summary>
     public void Awake()
     {
+        base.Awake();
         listPoint = new List<Vector3>();
         mesh = GetComponent<MeshFilter>().mesh;
         meshRender = GetComponent<MeshRenderer>();
@@ -39,7 +40,7 @@ public class MeshTexture : UIView
     // Use this for initialization
     public void Start()
     {
-
+        base.Start();
         // Draw();
     }
 

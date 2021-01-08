@@ -7,11 +7,20 @@ using System.IO;
 using LitJson;
 public class Resource
 {
-      static public string dirResource
+    static public string dirResource
     {
         get
-        { 
-            string ret = Application.dataPath+"/Resources";
+        {
+            string ret = Application.dataPath + "/Resources";
+            return ret;
+        }
+    }
+
+    static public string dirScript
+    {
+        get
+        {
+            string ret = Application.dataPath + "/Script";
             return ret;
         }
     }
@@ -34,10 +43,10 @@ public class Resource
 
             //  Debug.Log("Resource Application.dataPath=" + Application.dataPath);
             Debug.Log("Resource dirProject=" + applicationPath);
-          
+
             if (GameManager.main.isLoadGameScreenShot && !Application.isEditor)
             {
-             applicationPath = AppsConfig.ROOT_DIR_PC+"/"+AppsConfig.NAME+"Unity";//kidsgame
+                applicationPath = AppsConfig.ROOT_DIR_PC + "/" + AppsConfig.NAME + "Unity";//kidsgame
             }
 
             return applicationPath;
@@ -138,7 +147,7 @@ public class Resource
     {
         get
         {
-            string str = FileUtil.GetLastDir(dirResourceData) + "/project_ios/"+"game_device_" + Common.appType + "_" + Common.appKeyName;
+            string str = FileUtil.GetLastDir(dirResourceData) + "/project_ios/" + "game_device_" + Common.appType + "_" + Common.appKeyName;
             return str;
         }
     }

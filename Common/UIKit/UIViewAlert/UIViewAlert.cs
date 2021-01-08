@@ -53,10 +53,10 @@ public class UIViewAlert : UIViewPop
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        LayOut();
-    }
+    // void Update()
+    // {
+    //     LayOut();
+    // }
     public override void LayOut()
     {
         base.LayOut();

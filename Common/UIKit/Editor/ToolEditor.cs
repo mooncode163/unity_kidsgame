@@ -40,7 +40,7 @@ public class ToolEditor : Editor
     {
         MakeConfigPrefab();
         MakeConfigImage();
-        
+
     }
 
     [MenuItem(KEY_MENU_GameObject + "/MakeConfigPrefab", false, 4)]
@@ -51,8 +51,12 @@ public class ToolEditor : Editor
 
         string dir1 = Resource.dirResource + "/App/Prefab";
         string dir2 = Resource.dirResource + "/AppCommon/Prefab";
-        ScanPrefabFile(dir1, "ConfigPrefabApp.json");
-        ScanPrefabFile(dir2, "ConfigPrefabAppCommon.json");
+        ScanPrefabFile(dir1, Resource.dirResource + "/ConfigData/Prefab/ConfigPrefabApp.json");
+        ScanPrefabFile(dir2, Resource.dirResource + "/ConfigData/Prefab/ConfigPrefabAppCommon.json");
+
+        string dir = Resource.dirScript + "/Common/Resources/Common/Prefab";
+        ScanPrefabFile(dir, dir + "/ConfigPrefab.json");
+
         Debug.Log("MakeConfigPrefab end");
     }
 
@@ -65,6 +69,7 @@ public class ToolEditor : Editor
         foreach (string strfile in listFile)
         {
             string name = strfile.Replace(Resource.dirResource + "/", "");
+            name = name.Replace(Resource.dirScript + "/Common/Resources/", "");
             name = name.Replace("\\", "/");
             string key = FileUtil.GetFileName(name);
             // Debug.Log("name =" + name + " key=" + key);
@@ -80,9 +85,9 @@ public class ToolEditor : Editor
             JsonMapper.ToJson(data, jr);
             string strJson = sb.ToString();
             //Debug.Log(strJson);
-            string filepath = Resource.dirResource + "/ConfigData/Prefab/" + jsonfile;
+
             byte[] bytes = Encoding.UTF8.GetBytes(strJson);
-            System.IO.File.WriteAllBytes(filepath, bytes);
+            System.IO.File.WriteAllBytes(jsonfile, bytes);
         }
 
     }

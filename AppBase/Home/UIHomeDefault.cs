@@ -158,6 +158,8 @@ public class UIHomeDefault : UIHomeBase
     }
     public void OnClickBtnPlay()
     {
+      
+        
         if (!isActionFinish)
         {
             return;

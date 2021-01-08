@@ -27,31 +27,35 @@ public class UITextView : UIView
 
     /// Awake is called when the script instance is being loaded.
     /// </summary>
-    void Awake()
+    public void Awake()
     {
-
+        base.Awake();
+        if (!Common.isBlankString(keyColor))
+        {
+            SetTextColor(GetKeyColor());
+        }
     }
     // Use this for initialization
-    void Start()
+    public void Start()
     {
-
+        base.Start();
     }
 
 
- 
+
     public void SetContentHeight(float h)
     {
         RectTransform rctran = objScrollContent.GetComponent<RectTransform>();
         rctran.sizeDelta = new Vector2(rctran.sizeDelta.x, h);
     }
 
-      public void SetFontSize(int sz)
-    { 
+    public void SetFontSize(int sz)
+    {
         textContent.fontSize = sz;
     }
 
-      public void SetTextColor(Color cr)
-    { 
+    public void SetTextColor(Color cr)
+    {
         textContent.color = cr;
     }
     public override void LayOut()
@@ -61,10 +65,11 @@ public class UITextView : UIView
         float str_w = Common.GetStringLength(textContent.text, AppString.STR_FONT_NAME, fontsize);
 
         RectTransform rctran = this.GetComponent<RectTransform>();
-        if(rctran.rect.size.x==0){
+        if (rctran.rect.size.x == 0)
+        {
             return;
         }
-        float str_h = (str_w / rctran.rect.size.x + 1) * fontsize*2;
+        float str_h = (str_w / rctran.rect.size.x + 1) * fontsize * 2;
         SetContentHeight(str_h);
         Debug.Log("textView str_w =" + str_w + " str_h=" + str_h + " rctran.rect.size.x=" + rctran.rect.size.x);
     }

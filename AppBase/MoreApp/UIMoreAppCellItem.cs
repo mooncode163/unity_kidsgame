@@ -70,6 +70,8 @@ public class UIMoreAppCellItem : UICellItemBase
             imageItem.transform.localScale = new Vector3(scale, scale, 1.0f);
 
             viewLoading.Show(false);
+
+            AnimateCommon.main.RunFlipH(imageItem.gameObject,imageItem.gameObject,0.15f);
         }
         else
         {

@@ -16,7 +16,8 @@ public class LayOutSize : LayOutBase
     public float ratioH = 1f;//高
     public GameObject target;
     public GameObject target2;
-
+    public float width = 1f;//宽
+    public float height = 1f;//宽
 
     public SideType sideType;
 
@@ -131,6 +132,9 @@ public class LayOutSize : LayOutBase
         MATCH_HEIGHT,//width 和 height相等
         BETWEEN_SIDE_TARGET,//夹在边界和target之间
         BETWEEN_TWO_TARGET,//夹在两个target之间
+
+        // 和widht height同步
+        MATCH_VALUE,
     }
 
     public enum TypeWidthHeightScale// 保持 w=h
@@ -191,7 +195,12 @@ public class LayOutSize : LayOutBase
                     x = rctran.anchoredPosition.x;
                 }
                 break;
-
+            case Type.MATCH_VALUE:
+                {
+                    w = width;
+                    x = rctran.anchoredPosition.x;
+                }
+                break;
 
             case Type.MATCH_PARENT:
                 {
@@ -255,7 +264,12 @@ public class LayOutSize : LayOutBase
                     y = rctran.anchoredPosition.y;
                 }
                 break;
-
+            case Type.MATCH_VALUE:
+                {
+                    h = height;
+                    y = rctran.anchoredPosition.y;
+                }
+                break;
             case Type.MATCH_PARENT:
                 {
                     h = h_parent * ratioH;

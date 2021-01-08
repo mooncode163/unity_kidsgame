@@ -50,6 +50,7 @@ public class AppSceneBase : ScriptBase
 
         //Component
         this.gameObject.AddComponent<AdKitCommon>();
+        this.gameObject.AddComponent<AnimateCommon>();
         this.gameObject.AddComponent<IAPCommon>();
         this.gameObject.AddComponent<ShareCommon>();
         this.gameObject.AddComponent<TTSCommon>();

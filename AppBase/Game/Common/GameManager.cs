@@ -101,4 +101,30 @@ public class GameManager
         // }
 
     }
+
+
+    public void ShowPrivacy()
+    {
+        if (Common.GetBool(UIPrivacy.KEY_DISABLE_UIPRIVACY))
+        {
+            return;
+        }
+        string strPrefab = ConfigPrefab.main.GetPrefab("UIPrivacy");
+        Debug.Log("ShowPrivacy strPrefab=" + strPrefab);
+        // strPrefab = "Common/Prefab/Setting/UILanguage";
+        // strPrefab = "Common/Prefab/Privacy/UIPrivacy";
+        //
+        // Common/Prefab/Privacy/UIPrivacy.prefab
+
+
+        PopUpManager.main.Show<UIViewPop>(strPrefab, popup =>
+     {
+         Debug.Log("UIViewAlert Open ");
+
+     }, popup =>
+     {
+         // OnUILanguageDidClose();
+
+     });
+    }
 }

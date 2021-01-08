@@ -6,7 +6,7 @@ using DG.Tweening;
 public delegate void OnUITabBarItemClickDelegate(UITabBarItem ui);
 public class UITabBarItem : UIView
 {
-    float animaeTime = 0.3f;
+    float animaeTime = 0.15f;//0.3
     private bool isActive = false;//true代表正在执行翻转，不许被打断
     public UIImage imageBg;
     public UIText textTitle;
@@ -53,9 +53,11 @@ public class UITabBarItem : UIView
 
     public void OnClickBtnItem()
     {
-        StartAnimate();
-        Invoke("OnAnimateEnd", animaeTime * 2);
 
+        StartAnimate();
+        // OnAnimateEnd();
+        Invoke("OnAnimateEnd", animaeTime * 2);
+        // Invoke("OnAnimateEnd", 0.1f);
     }
     public override void UpdateLanguage()
     {

@@ -106,6 +106,8 @@ public class HomeViewController : UIViewController
         uiHome.SetController(this);
         UIViewController.ClonePrefabRectTransform(uiHomePrefab.gameObject, uiHome.gameObject);
         uiHome.Init();
+ 
+        GameManager.main.ShowPrivacy();
     }
 
 

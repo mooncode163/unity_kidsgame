@@ -11,6 +11,7 @@ public class ConfigPrefab
     JsonData rootJson;
 
     ConfigPrefabInternal prefabApp;
+    ConfigPrefabInternal prefabAppCommon;
     ConfigPrefabInternal prefabCommon;
     static private ConfigPrefab _main = null;
     public static ConfigPrefab main
@@ -22,7 +23,11 @@ public class ConfigPrefab
                 _main = new ConfigPrefab();
 
                 _main.prefabCommon = new ConfigPrefabInternal();
-                _main.prefabCommon.Init(Common.RES_CONFIG_DATA + "/Prefab/ConfigPrefabAppCommon.json");
+                // _main.prefabCommon.Init(Resource.dirScript + "/Common/Resources/Common/Prefab/ConfigPrefab.json");
+                                _main.prefabCommon.Init("Common/Prefab/ConfigPrefab.json");
+                
+                _main.prefabAppCommon = new ConfigPrefabInternal();
+                _main.prefabAppCommon.Init(Common.RES_CONFIG_DATA + "/Prefab/ConfigPrefabAppCommon.json");
 
                 _main.prefabApp = new ConfigPrefabInternal();
                 _main.prefabApp.Init(Common.RES_CONFIG_DATA + "/Prefab/ConfigPrefabApp.json");
@@ -30,7 +35,7 @@ public class ConfigPrefab
             }
             return _main;
         }
-    } 
+    }
     public string GetPrefab(string key)
     {
         string ret = "";
@@ -38,7 +43,11 @@ public class ConfigPrefab
         {
             ret = prefabApp.GetPrefab(key);
         }
-        else
+        if (prefabAppCommon.IsHasKey(key))
+        {
+            ret = prefabAppCommon.GetPrefab(key);
+        }
+        if (prefabCommon.IsHasKey(key))
         {
             ret = prefabCommon.GetPrefab(key);
         }
@@ -46,5 +55,5 @@ public class ConfigPrefab
     }
 
 
- 
+
 }

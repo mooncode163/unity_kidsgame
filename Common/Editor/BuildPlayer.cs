@@ -59,6 +59,16 @@ public class BuildPlayer
         Debug.Log("PerformiPhoneBuild end");
     }
 
+
+   [MenuItem(KEY_MENU_ROOT + "/Screenshot")]
+    static void ScreenshotBuild()
+    {
+        Debug.Log("ScreenshotBuild start"); 
+
+        BulidTarget("QQ", "Screenshot");
+        Debug.Log("ScreenshotBuild end");
+    }
+
     static void ConverIcon()
     {
 
@@ -100,6 +110,23 @@ public class BuildPlayer
             buildTarget = BuildTarget.iOS;
 
         }
+
+        if (target == "Screenshot")
+        {
+            //target_dir = applicationPath + "/OutPut/iOS";
+            target_dir = Resource.dirProduct+"/bin";
+            // target_name = app_name;
+            target_name = PlayerSettings.productName;
+            targetGroup = BuildTargetGroup.Standalone;
+            buildTarget = BuildTarget.StandaloneOSX;
+             if (Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                buildTarget = BuildTarget.StandaloneWindows;
+            }
+
+
+        }
+        
         dirRootProject = target_dir + "/" + target_name;
         //每次build删除之前的残留
         if (Directory.Exists(dirRootProject))

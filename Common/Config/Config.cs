@@ -265,6 +265,14 @@ public class Config
         }
     }
 
+    public string PrivacyPolicy
+    {
+        get
+        {
+            return GetStringCommon("PrivacyPolicy", "PrivacyPolicy_chyfemail163@163.com.txt");
+        }
+    } 
+
     public bool isHaveShop
     {
         get
