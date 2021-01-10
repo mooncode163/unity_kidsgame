@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 
 public class HuaweiAppGalleryApi
 {
-    public const string ClientId = "469947311665972416";
-    public const string ClientSecret = "7701769ABE85209F58C1736D3FD95C8B9B7225F6EDC1415482D1EB142C8ED201";
+    public   string ClientId = "";
+    public   string ClientSecret = "";
     string accessToken = "";
     string appVersion = "";
     HTTPRequest reqHttpToken;
@@ -25,6 +25,8 @@ public class HuaweiAppGalleryApi
             if (_main == null)
             {
                 _main = new HuaweiAppGalleryApi();
+                _main.ClientId = AppStoreAcount.main.GetAcountInfo(Source.HUAWEI,Config.main.GetAppStoreAcount(Source.HUAWEI),AppStoreAcount.Type_ClientId);
+                _main.ClientSecret = AppStoreAcount.main.GetAcountInfo(Source.HUAWEI,Config.main.GetAppStoreAcount(Source.HUAWEI),AppStoreAcount.Type_ClientSecret);
 
             }
             return _main;

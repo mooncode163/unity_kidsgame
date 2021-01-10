@@ -271,7 +271,8 @@ public class Config
         {
             return GetStringCommon("PrivacyPolicy", "PrivacyPolicy_chyfemail163@163.com.txt");
         }
-    } 
+    }
+
 
     public bool isHaveShop
     {
@@ -374,7 +375,20 @@ public class Config
         rootJson = null;
         ParseJson(ishd);
     }
+    public string GetAppStoreAcount(string store)
+    {
+        string key = "appstore_acount";
+        string acount_default = "chyfemail163@163.com";
+        bool ishave = Common.JsonDataContainsKey(rootJsonCommon, key); 
+        if (!ishave)
+        {
+            return acount_default;
+        }
+        JsonData json = rootJsonCommon[key];
+        return JsonUtil.GetString(json,store,acount_default);
 
+
+    }
     public string GetAppIdOfStore(string store)
     {
         JsonData jsonAppId = rootJson["APPID"];

@@ -110,6 +110,7 @@ public class LevelParseLearnWord : LevelParseBase
         // Debug.Log("json::"+json);
         JsonData root = JsonMapper.ToObject(json);
         JsonData items = root["items"];
+        string rootPath =CloudRes.main.rootPathGameRes;
         for (int i = 0; i < items.Count; i++)
         {
             JsonData item = items[i];
@@ -126,12 +127,12 @@ public class LevelParseLearnWord : LevelParseBase
             info.dbInfo.title = word;
             info.dbInfo.imagetitle = (string)item["detail"];
             info.url = "https://hanyu.baidu.com/s?wd=" + word + "&ptype=zici";
-            string strDirRoot = CloudRes.main.rootPathGameRes + "/image_detail/";
+            string strDirRoot = rootPath + "/image_detail/";
             info.pic = strDirRoot + (i + 1).ToString() + ".jpg";
-            strDirRoot = CloudRes.main.rootPathGameRes + "/image/";
+            strDirRoot = rootPath + "/image/";
             info.icon = strDirRoot + info.id + "/" + info.id + ".png";
             info.index = i;
-            info.imageBihua = CloudRes.main.rootPathGameRes + "/image_bihua_show/" + info.wordCode + "/" + info.wordCode + "_LineShow.png";
+            info.imageBihua = rootPath + "/image_bihua_show/" + info.wordCode + "/" + info.wordCode + "_LineShow.png";
 
             //info.pic = info.icon;
             // if(FileUtil.FileIsExistAsset(info.icon))

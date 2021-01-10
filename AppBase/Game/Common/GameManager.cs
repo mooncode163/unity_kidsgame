@@ -102,9 +102,13 @@ public class GameManager
 
     }
 
-
+ 
     public void ShowPrivacy()
     {
+         if ( GameManager.main.isLoadGameScreenShot)
+        {
+            return;
+        }
         if (Common.GetBool(UIPrivacy.KEY_DISABLE_UIPRIVACY))
         {
             return;
