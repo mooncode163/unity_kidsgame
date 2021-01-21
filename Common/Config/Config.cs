@@ -291,6 +291,17 @@ public class Config
         }
     }
 
+// ios IDFA sdk 身份识别
+    public bool isNoIDFASDK
+    {
+        get
+        { 
+            string key = "NoIDFASDK";
+            bool ret = GetBoolKeyCommon(key, false);
+            return ret;
+        }
+    }
+
     public bool isHaveIntroduce
     {
         get

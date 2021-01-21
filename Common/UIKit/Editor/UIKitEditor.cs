@@ -77,7 +77,7 @@ public class UIKitEditor : Editor
         var selectedObj = Selection.activeObject as GameObject;
         if (selectedObj != null)
         {
-            GameObject obj = PrefabCache.main.Load("Common/Prefab/UIKit/UIImage/UIImage");
+            GameObject obj = PrefabCache.main.LoadByKey("UIImage");
             if (obj != null)
             {
                 UIImage uiPrefab = obj.GetComponent<UIImage>();
@@ -288,6 +288,26 @@ public class UIKitEditor : Editor
         }
 
     }
+ [MenuItem(KEY_MENU_GameObject_UI + "/UICoverFlow", false, 4)]
+    static void CreateUICoverFlow()
+    {
+        var selectedObj = Selection.activeObject as GameObject;
+        if (selectedObj != null)
+        {
+            GameObject obj = PrefabCache.main.LoadByKey("UICoverFlow");
+            if (obj != null)
+            {
+                UICoverFlow uiPrefab = obj.GetComponent<UICoverFlow>();
+                UICoverFlow ui = (UICoverFlow)GameObject.Instantiate(uiPrefab);
+                ui.name = "UICoverFlow";
+                ui.transform.SetParent(selectedObj.transform);
+                Selection.activeGameObject = ui.gameObject;
+                ui.transform.localScale = new Vector3(1f, 1f, 1f);
+                RectTransform rctran = ui.GetComponent<RectTransform>();
+                rctran.anchoredPosition = Vector2.zero;
+            }
+        }
 
+    } 
 
 }

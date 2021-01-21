@@ -87,6 +87,7 @@ public class ToolEditor : Editor
             //Debug.Log(strJson);
 
             byte[] bytes = Encoding.UTF8.GetBytes(strJson);
+            FileUtil.CreateFile(jsonfile);
             System.IO.File.WriteAllBytes(jsonfile, bytes);
         }
 
@@ -147,6 +148,7 @@ public class ToolEditor : Editor
             JsonMapper.ToJson(data, jr);
             string strJson = sb.ToString();
             //Debug.Log(strJson); 
+            FileUtil.CreateFile(filepathJson);
             byte[] bytes = Encoding.UTF8.GetBytes(strJson);
             System.IO.File.WriteAllBytes(filepathJson, bytes);
         }

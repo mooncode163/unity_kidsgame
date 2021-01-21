@@ -36,265 +36,274 @@
     "loading_animate19" : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate19.png"
     },
-    "loading_animate18" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate18.png"
+    "bg_huawei_chyfemail163@163.com" : {
+        "path" : "Common/UI/ScreenShot/CopyRight/bg_huawei_chyfemail163@163.com.png"
     },
-    "date"              : {
+    "date"                           : {
         "path" : "Common/UI/ScreenShot/CopyRight/date.png"
     },
-    "loading_animate58" : {
+    "loading_animate58"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate58.png"
     },
-    "loading_animate59" : {
+    "loading_animate59"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate59.png"
     },
-    "loading_animate1"  : {
+    "loading_animate1"               : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate1.png"
     },
-    "loading_animate43" : {
+    "loading_animate43"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate43.png"
     },
-    "loading_animate62" : {
+    "loading_animate62"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate62.png"
     },
-    "AdBannerIconAd"    : {
+    "AdBannerIconAd"                 : {
         "path" : "Common/UI/Home/AdBannerIconAd.png"
     },
-    "share_icon_qqzone" : {
+    "share_icon_qqzone"              : {
         "path" : "Common/UI/Share/share_icon_qqzone.png"
     },
-    "loading_animate6"  : {
+    "loading_animate6"               : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate6.png"
     },
-    "share_icon_weixin" : {
+    "share_icon_weixin"              : {
         "path" : "Common/UI/Share/share_icon_weixin.png"
     },
-    "loading_animate61" : {
+    "loading_animate18"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate18.png"
+    },
+    "loading_animate61"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate61.png"
     },
-    "ResultBg"          : {
+    "ResultBg"                       : {
         "path" : "Common/UI/ParentGate/ResultBg.png"
     },
-    "loading_animate4"  : {
+    "loading_animate4"               : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate4.png"
     },
-    "NumBoardBg"        : {
+    "NumBoardBg"                     : {
         "path" : "Common/UI/ParentGate/NumBoardBg.png"
     },
-    "loading_animate63" : {
+    "loading_animate63"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate63.png"
     },
-    "icon_appstore"     : {
+    "icon_appstore"                  : {
         "path" : "Common/UI/Comment/icon_appstore.png"
     },
-    "loading_animate0"  : {
+    "loading_animate0"               : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate0.png"
     },
-    "loading_animate54" : {
+    "loading_animate54"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate54.png"
     },
-    "StatusOk"          : {
+    "StatusOk"                       : {
         "path" : "Common/UI/ParentGate/StatusOk.png"
     },
-    "loading_animate8"  : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate8.png"
-    },
-    "loading_animate15" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate15.png"
-    },
-    "loading_animate45" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate45.png"
-    },
-    "share_icon_sms"    : {
-        "path" : "Common/UI/Share/share_icon_sms.png"
-    },
-    "name"              : {
-        "path" : "Common/UI/ScreenShot/CopyRight/name.png"
-    },
-    "loading_animate46" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate46.png"
-    },
-    "loading_animate41" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate41.png"
-    },
-    "close"             : {
-        "path" : "Common/UI/ParentGate/close.png"
-    },
-    "Logo"              : {
-        "path" : "Common/UI/ParentGate/Logo.png"
-    },
-    "loading_animate42" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate42.png"
-    },
-    "loading_animate49" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate49.png"
-    },
-    "loading_animate48" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate48.png"
-    },
-    "loading_animate65" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate65.png"
-    },
-    "loading_animate64" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate64.png"
-    },
-    "loading_animate67" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate67.png"
-    },
-    "loading_animate66" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate66.png"
-    },
-    "loading_animate44" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate44.png"
-    },
-    "CloudProgressFt"   : {
-        "path" : "Common/UI/UIKit/UIProgress/CloudProgressFt.png"
-    },
-    "loading_animate25" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate25.png"
-    },
-    "loading_animate24" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate24.png"
-    },
-    "loading_animate27" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate27.png"
-    },
-    "share_icon_qq"     : {
-        "path" : "Common/UI/Share/share_icon_qq.png"
-    },
-    "loading_animate21" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate21.png"
-    },
-    "loading_animate20" : {
-        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate20.png"
-    },
-    "loading_animate23" : {
+    "loading_animate23"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate23.png"
     },
-    "loading_animate22" : {
+    "loading_animate15"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate15.png"
+    },
+    "bg"                             : {
+        "path" : "Common/UI/ScreenShot/CopyRight/bg.png"
+    },
+    "loading_animate45"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate45.png"
+    },
+    "share_icon_sms"                 : {
+        "path" : "Common/UI/Share/share_icon_sms.png"
+    },
+    "name"                           : {
+        "path" : "Common/UI/ScreenShot/CopyRight/name.png"
+    },
+    "loading_animate46"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate46.png"
+    },
+    "loading_animate41"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate41.png"
+    },
+    "close"                          : {
+        "path" : "Common/UI/ParentGate/close.png"
+    },
+    "Logo"                           : {
+        "path" : "Common/UI/ParentGate/Logo.png"
+    },
+    "loading_animate42"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate42.png"
+    },
+    "loading_animate8"               : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate8.png"
+    },
+    "loading_animate49"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate49.png"
+    },
+    "loading_animate48"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate48.png"
+    },
+    "loading_animate65"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate65.png"
+    },
+    "loading_animate64"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate64.png"
+    },
+    "loading_animate67"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate67.png"
+    },
+    "loading_animate66"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate66.png"
+    },
+    "loading_animate44"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate44.png"
+    },
+    "CloudProgressFt"                : {
+        "path" : "Common/UI/UIKit/UIProgress/CloudProgressFt.png"
+    },
+    "loading_animate25"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate25.png"
+    },
+    "loading_animate24"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate24.png"
+    },
+    "loading_animate27"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate27.png"
+    },
+    "share_icon_qq"                  : {
+        "path" : "Common/UI/Share/share_icon_qq.png"
+    },
+    "loading_animate21"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate21.png"
+    },
+    "loading_animate20"              : {
+        "path" : "Common/UI/UIKit/UIViewLoading/loading_animate20.png"
+    },
+    "bg_huawei_qq651577315@163.com"  : {
+        "path" : "Common/UI/ScreenShot/CopyRight/bg_huawei_qq651577315@163.com.png"
+    },
+    "loading_animate22"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate22.png"
     },
-    "bg_ali"            : {
+    "bg_ali"                         : {
         "path" : "Common/UI/ScreenShot/CopyRight/bg_ali.jpg"
     },
-    "loading_animate29" : {
+    "loading_animate29"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate29.png"
     },
-    "loading_animate28" : {
+    "loading_animate28"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate28.png"
     },
-    "loading_animate40" : {
+    "loading_animate40"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate40.png"
     },
-    "icon_xiaomi"       : {
+    "icon_xiaomi"                    : {
         "path" : "Common/UI/Comment/icon_xiaomi.png"
     },
-    "ShareCellBgBlue"   : {
+    "ShareCellBgBlue"                : {
         "path" : "Common/UI/Share/ShareCellBgBlue.png"
     },
-    "CloudProgressBg"   : {
+    "CloudProgressBg"                : {
         "path" : "Common/UI/UIKit/UIProgress/CloudProgressBg.png"
     },
-    "loading_animate47" : {
+    "name_qq651577315@163.com"       : {
+        "path" : "Common/UI/ScreenShot/CopyRight/name_qq651577315@163.com.png"
+    },
+    "loading_animate47"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate47.png"
     },
-    "BtnClose"          : {
+    "BtnClose"                       : {
         "path" : "Common/UI/ParentGate/BtnClose.png"
     },
-    "NumBg"             : {
+    "NumBg"                          : {
         "path" : "Common/UI/ParentGate/NumBg.png"
     },
-    "loading_animate7"  : {
+    "loading_animate7"               : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate7.png"
     },
-    "gou"               : {
+    "gou"                            : {
         "path" : "Common/UI/ParentGate/gou.png"
     },
-    "loading_bg"        : {
+    "loading_bg"                     : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_bg.png"
     },
-    "share_icon_email"  : {
+    "share_icon_email"               : {
         "path" : "Common/UI/Share/share_icon_email.png"
     },
-    "loading_animate3"  : {
+    "loading_animate3"               : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate3.png"
     },
-    "LogoBg"            : {
+    "LogoBg"                         : {
         "path" : "Common/UI/ParentGate/LogoBg.png"
     },
-    "loading_animate60" : {
+    "loading_animate60"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate60.png"
     },
-    "share_icon_weibo"  : {
+    "share_icon_weibo"               : {
         "path" : "Common/UI/Share/share_icon_weibo.png"
     },
-    "yingzhang"         : {
+    "yingzhang"                      : {
         "path" : "Common/UI/ScreenShot/CopyRight/yingzhang.png"
     },
-    "loading_animate26" : {
+    "loading_animate26"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate26.png"
     },
-    "share_icon_weixinfriend" : {
+    "share_icon_weixinfriend"        : {
         "path" : "Common/UI/Share/share_icon_weixinfriend.png"
     },
-    "loading_animate5"        : {
+    "loading_animate5"               : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate5.png"
     },
-    "icon_huawei"             : {
+    "icon_huawei"                    : {
         "path" : "Common/UI/Comment/icon_huawei.png"
     },
-    "loading_animate35"       : {
+    "loading_animate35"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate35.png"
     },
-    "loading_animate34"       : {
+    "loading_animate34"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate34.png"
     },
-    "loading_animate37"       : {
+    "loading_animate37"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate37.png"
     },
-    "loading_animate36"       : {
+    "loading_animate36"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate36.png"
     },
-    "loading_animate31"       : {
+    "loading_animate31"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate31.png"
     },
-    "loading_animate30"       : {
+    "loading_animate30"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate30.png"
     },
-    "loading_animate33"       : {
+    "loading_animate33"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate33.png"
     },
-    "loading_animate32"       : {
+    "loading_animate32"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate32.png"
     },
-    "loading_animate53"       : {
+    "loading_animate53"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate53.png"
     },
-    "loading_animate39"       : {
+    "loading_animate39"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate39.png"
     },
-    "loading_animate38"       : {
+    "loading_animate38"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate38.png"
     },
-    "loading_animate9"        : {
+    "loading_animate9"               : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate9.png"
     },
-    "bg_huawei"               : {
-        "path" : "Common/UI/ScreenShot/CopyRight/bg_huawei.png"
-    },
-    "StatusFail"              : {
+    "StatusFail"                     : {
         "path" : "Common/UI/ParentGate/StatusFail.png"
     },
-    "loading_animate55"       : {
+    "loading_animate55"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate55.png"
     },
-    "loading_animate52"       : {
+    "loading_animate52"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate52.png"
     },
-    "loading_animate57"       : {
+    "loading_animate57"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate57.png"
     },
-    "loading_animate56"       : {
+    "loading_animate56"              : {
         "path" : "Common/UI/UIKit/UIViewLoading/loading_animate56.png"
     }
 }

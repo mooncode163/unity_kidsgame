@@ -38,14 +38,14 @@ public class UIWriteController : UIView, IUIWordWriteDelegate
         listBtnMode.Add(btnModeOne);
         listBtnMode.Add(btnModeNone);
         SelectBtn(btnModeAll);
-        Debug.Log("UIWriteController LevelManager.main.gameLevel="+LevelManager.main.gameLevel);
+        Debug.Log("UIWriteController LevelManager.main.gameLevel=" + LevelManager.main.gameLevel);
         WordItemInfo info = GameLevelParse.main.GetItemInfo();
         uiWordWrite.UpdateItem(info);
         uiWordWrite.iDelegate = this;
         LayOut();
 
         Invoke("GotoModeDelay", 0.2f);
-
+        OnUIDidFinish(0.5f);
     }
 
     void LoadPrefab()
@@ -60,7 +60,7 @@ public class UIWriteController : UIView, IUIWordWriteDelegate
     {
         OnMode(WriteViewController.main.mode);
 
-        OnUIDidFinish();
+
     }
 
 

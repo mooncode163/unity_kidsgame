@@ -378,6 +378,13 @@ public class AppVersion
         {
             switch (Config.main.channel)
             {
+
+                    case Source.OPPO:
+                   case Source.VIVO:
+                    {
+                        appVersionBase = new AppVersionWebHome();
+                        break;
+                    }
                 case Source.XIAOMI:
                     {
                         appVersionBase = new AppVersionXiaomi();
@@ -400,7 +407,7 @@ public class AppVersion
                     }
                 default:
                     {
-                        appVersionBase = new AppVersionBase();
+                        appVersionBase = new AppVersionWebHome();
                     }
                     break;
 

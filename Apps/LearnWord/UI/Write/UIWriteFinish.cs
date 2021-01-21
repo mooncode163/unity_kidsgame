@@ -74,6 +74,8 @@ public class UIWriteFinish : UIView
         if (navi != null)
         {
             navi.Pop();
+        }else{
+            WriteFinishViewController.main.Close();
         }
     }
 

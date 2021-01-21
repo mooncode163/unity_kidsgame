@@ -109,6 +109,10 @@ public class GameManager
         {
             return;
         }
+          if (Common.isiOS)
+        {
+            return;
+        }
         if (Common.GetBool(UIPrivacy.KEY_DISABLE_UIPRIVACY))
         {
             return;

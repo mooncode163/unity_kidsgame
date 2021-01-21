@@ -23,6 +23,8 @@ public class Source
     public const string HUAWEI = "huawei";
     public const string GP = "gp";//google play
     public const string FACEBOOK = "fb";
+    public const string OPPO = "oppo";
+    public const string VIVO = "vivo";
 
     public const string QIHU_360 = "360";
 

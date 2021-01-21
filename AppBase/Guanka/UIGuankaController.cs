@@ -63,7 +63,7 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
         }
         //bg
         // TextureUtil.UpdateRawImageTexture(imageBg, AppRes.IMAGE_GUANKA_BG, true);
-        string strlan = CloudRes.main.rootPathGameRes +"/place/language/language.csv";
+        string strlan = CloudRes.main.rootPathGameRes + "/place/language/language.csv";
         if (Common.isWeb)
         {
             httpReqLanguage = new HttpRequest(OnHttpRequestFinished);
@@ -100,7 +100,7 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
     }
     public override void PreLoadDataForWeb()
     {
-        string strlan = CloudRes.main.rootPathGameRes +"/place/language/language.csv";
+        string strlan = CloudRes.main.rootPathGameRes + "/place/language/language.csv";
         httpReqLanguage = new HttpRequest(OnHttpRequestFinished);
         httpReqLanguage.Get(HttpRequest.GetWebUrlOfAsset(strlan));
     }
@@ -252,31 +252,35 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
         }
         tick = Common.GetCurrentTimeMs();
         GotoGame(item.index);
-        ItemInfo info = listItem[item.index] as ItemInfo;
-        if (info.isAd)
+        if (item.index < listItem.Count)
         {
-            bool isAdVideo = true;
-            int type = AdConfigParser.SOURCE_TYPE_VIDEO;
-            string keyAdVideo = AdConfig.main.GetAdKey(Source.GDT, type);
-            if (Common.isAndroid)
+
+            ItemInfo info = listItem[item.index] as ItemInfo;
+            if (info.isAd)
             {
-                if ((Common.BlankString(keyAdVideo)) || (keyAdVideo == "0"))
+                bool isAdVideo = true;
+                int type = AdConfigParser.SOURCE_TYPE_VIDEO;
+                string keyAdVideo = AdConfig.main.GetAdKey(Source.GDT, type);
+                if (Common.isAndroid)
                 {
-                    //android 显示插屏广告
-                    isAdVideo = false;
+                    if ((Common.BlankString(keyAdVideo)) || (keyAdVideo == "0"))
+                    {
+                        //android 显示插屏广告
+                        isAdVideo = false;
+                    }
+                }
+                if (isAdVideo)
+                {
+                    AdKitCommon.main.ShowAdVideo();
+                }
+                else
+                {
+                    AdKitCommon.main.InitAdInsert();
+                    AdKitCommon.main.ShowAdInsert(100);
                 }
             }
-            if (isAdVideo)
-            {
-                AdKitCommon.main.ShowAdVideo();
-            }
-            else
-            {
-                AdKitCommon.main.InitAdInsert();
-                AdKitCommon.main.ShowAdInsert(100);
-            }
-        }
 
+        }
     }
 
     #endregion

@@ -275,7 +275,7 @@ public class FileUtil
         byte[] data = ReadDataAsset(file);
         if (data == null)
         {
-            Debug.Log("ReadStringAsset data is null file="+file);
+            Debug.Log("ReadStringAsset data is null file=" + file);
             return null;
         }
         string str = Encoding.UTF8.GetString(data);
@@ -465,7 +465,18 @@ public class FileUtil
         }
         return ret;
     }
+    static public void CreateFile(string filepath)
+    {
+        if (!FileUtil.FileIsExist(filepath))
+        {
+            string dirSave = FileUtil.GetFileDir(filepath);
+            FileUtil.CreateDir(dirSave);
+            Debug.Log("create file jsonfile=" + filepath);
+            System.IO.File.Create(filepath).Close();
+        }
 
+
+    }
     static public void CreateDir(string dir)
     {
         if (!Directory.Exists(dir))
@@ -591,7 +602,7 @@ public class FileUtil
 
     }
 
-     static public void CopyOneFile(string src, string dst, bool rewrite=true)
+    static public void CopyOneFile(string src, string dst, bool rewrite = true)
     {
         File.Copy(src, dst, rewrite);
     }

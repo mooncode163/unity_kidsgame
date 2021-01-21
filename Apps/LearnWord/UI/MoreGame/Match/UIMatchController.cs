@@ -37,13 +37,13 @@ public class UIMatchController : UIView, IUIWordTextDelegate
     public void Start()
     {
         LevelManager.main.gameLevel = 0;
-        if(Application.isEditor)
+        if(Application.isEditor||GameManager.main.isLoadGameScreenShot)
         {
              LevelManager.main.gameLevel = 2;
         }
         UpdateItem(GameLevelParse.main.GetItemInfo());
         LayOut();
-        OnUIDidFinish(); 
+        OnUIDidFinish(0.5f); 
     }
     void LoadPrefab()
     {

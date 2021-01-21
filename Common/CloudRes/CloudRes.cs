@@ -64,7 +64,6 @@ public class CloudRes
                     // 实际地址
                     dirRoot = Resource.dirResourceDataApp;
                     ret = dirRoot + "/" + Common.GAME_RES_DIR;
-
                     // 判断文件数量多的时候比较费时间
                     if (!FileUtil.DirIsExist(dirRoot))
                     {

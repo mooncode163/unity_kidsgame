@@ -46,6 +46,7 @@ public class UIImage : UIView
         }
     }
 
+// 绝对路径
     public void UpdateImage(string pic, string key = "")
     {
         string strKey = key;

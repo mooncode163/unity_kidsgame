@@ -156,7 +156,7 @@ public class HuaweiAppGalleryApi
             {
                 //提交版本 审核中等或者审核不通过等
                 // releaseState = 0;
-                versionApi = "1.0.0";
+                versionApi = "0.0.0";
                 version = versionApi;
             }
 
