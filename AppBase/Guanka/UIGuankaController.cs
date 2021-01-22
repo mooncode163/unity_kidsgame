@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Moonma.AdKit.AdConfig;
+using Moonma.IAP;
 using Tacticsoft;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 
 public class UIGuankaController : UIGuankaBase, ITableViewDataSource
 {
+    public const string STR_KEYNAME_VIEWALERT_UNLOCK_LEVLE = "STR_KEYNAME_VIEWALERT_UNLOCK_LEVLE";
     public Button btnBack;
     public UIText textTitle;
     UICellItemBase cellItemPrefab;
@@ -26,6 +28,22 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
 
     Language languagePlace;
     HttpRequest httpReqLanguage;
+    int indexClick;
+
+    static public bool isHaveUnlockLevel
+    {
+        get
+        {
+            string key = "key_HaveUnlockLevel";
+            return Common.Int2Bool(PlayerPrefs.GetInt(key, 0));
+        }
+        set
+        {
+            string key = "key_HaveUnlockLevel";
+            PlayerPrefs.SetInt(key, Common.Bool2Int(value));
+
+        }
+    }
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -251,10 +269,10 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
             return;
         }
         tick = Common.GetCurrentTimeMs();
-        GotoGame(item.index);
+        bool enable = true;
         if (item.index < listItem.Count)
         {
-
+            indexClick = item.index;
             ItemInfo info = listItem[item.index] as ItemInfo;
             if (info.isAd)
             {
@@ -278,14 +296,112 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
                     AdKitCommon.main.InitAdInsert();
                     AdKitCommon.main.ShowAdInsert(100);
                 }
+
+
+                if ((Config.main.isNoIDFASDK&&Common.isiOS) && (!isHaveUnlockLevel))
+                {
+                    enable = false;
+                    // 内购解锁
+                    OnUnLockLevelIAP();
+                }
             }
 
+        }
+
+        if (enable)
+        {
+            GotoGame(item.index);
         }
     }
 
     #endregion
 
+    public void OnUnLockLevelIAP()
+    {
+        if (Config.main.APP_FOR_KIDS)
+        {
+            ParentGateViewController.main.Show(null, null);
+            ParentGateViewController.main.ui.callbackClose = OnUIParentGateDidCloseNoAd;
+        }
+        else
+        {
+            DoUnLockLevelAlert();
+        }
+    }
 
+    public void OnUIParentGateDidCloseNoAd(UIParentGate ui, bool isLongPress)
+    {
+        if (isLongPress)
+        {
+            DoUnLockLevelAlert();
+        }
+    }
+    public void DoUnLockLevelAlert()
+    {
+        string title = Language.main.GetString("STR_UIVIEWALERT_TITLE_UnlockLevel");
+        string msg = Language.main.GetString("STR_UIVIEWALERT_MSG_UnlockLevel");
+        string yes = Language.main.GetString("STR_UIVIEWALERT_YES_UnlockLevel");
+        string no = Language.main.GetString("STR_UIVIEWALERT_NO_UnlockLevel");
+
+        ViewAlertManager.main.ShowFull(title, msg, yes, no, true, STR_KEYNAME_VIEWALERT_UNLOCK_LEVLE, OnUIViewAlertFinished);
+    }
+
+    public void DoUnLockLevelIAP(bool isRestore)
+    {
+        IAP.main.SetObjectInfo(this.gameObject.name, "IAPCallBack");
+
+        // viewAlert.ShowBtnNo(false);
+        // viewAlert.keyName = STR_KEYNAME_VIEWALERT_LOADING;
+        // viewAlert.callback = OnUIViewAlertFinished;
+        // string title = Language.main.GetString(AppString.STR_UIVIEWALERT_TITLE_SHOP_START_BUY);
+        // string msg = Language.main.GetString(AppString.STR_UIVIEWALERT_MSG_SHOP_START_BUY);
+        // string yes = Language.main.GetString(AppString.STR_UIVIEWALERT_YES_SHOP_START_BUY);
+        // string no = Language.main.GetString(AppString.STR_UIVIEWALERT_YES_SHOP_START_BUY);
+        // viewAlert.SetText(title, msg, yes, no);
+        // viewAlert.Show();
+        string  product = Common.GetAppPackage() + "." + "unlocklevel";
+        if (isRestore)
+        {
+            IAP.main.RestoreBuy(product);
+        }
+        else
+        {
+            IAP.main.StartBuy(product, false);
+        }
+
+
+    }
+    public void IAPCallBack(string str)
+    {
+        Debug.Log("IAPCallBack::" + str);
+        IAP.main.IAPCallBackBase(str);
+
+        if ((str == IAP.UNITY_CALLBACK_BUY_DID_FINISH) || (str == IAP.UNITY_CALLBACK_BUY_DID_RESTORE))
+        {
+            isHaveUnlockLevel = true;
+
+            Loom.QueueOnMainThread(() =>
+            {
+                GotoGame(indexClick);
+
+            });
+        }
+
+    }
+    #region UIViewAlert
+    void OnUIViewAlertFinished(UIViewAlert alert, bool isYes)
+    {
+        if (STR_KEYNAME_VIEWALERT_UNLOCK_LEVLE == alert.keyName)
+        {
+            DoUnLockLevelIAP(!isYes);
+        }
+
+
+    }
+
+
+
+    #endregion
     void UpdateTable(bool isLoad)
     {
         // oneCellNum = 3;

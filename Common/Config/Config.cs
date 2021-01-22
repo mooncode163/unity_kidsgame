@@ -224,6 +224,13 @@ public class Config
             {
                 ret = false;
             }
+            if(Common.isiOS)
+            {
+                if(Config.main.isNoIDFASDK)
+                {
+                   ret = false; 
+                }
+            }
             return ret;
         }
     }
@@ -291,11 +298,29 @@ public class Config
         }
     }
 
-// ios IDFA sdk 身份识别
+    public bool isiOS
+    {
+        get
+        {
+            bool ret = false;
+#if UNITY_IOS && !UNITY_EDITOR
+        ret = true;
+#endif
+
+            return ret;
+        }
+    }
+
+
+    // ios IDFA sdk 身份识别
     public bool isNoIDFASDK
     {
         get
-        { 
+        {
+            // if (!isiOS)
+            // {
+            //     return false;
+            // }
             string key = "NoIDFASDK";
             bool ret = GetBoolKeyCommon(key, false);
             return ret;
@@ -390,13 +415,13 @@ public class Config
     {
         string key = "appstore_acount";
         string acount_default = "chyfemail163@163.com";
-        bool ishave = Common.JsonDataContainsKey(rootJsonCommon, key); 
+        bool ishave = Common.JsonDataContainsKey(rootJsonCommon, key);
         if (!ishave)
         {
             return acount_default;
         }
         JsonData json = rootJsonCommon[key];
-        return JsonUtil.GetString(json,store,acount_default);
+        return JsonUtil.GetString(json, store, acount_default);
 
 
     }

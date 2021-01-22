@@ -153,6 +153,10 @@ public class Common
     {
         get
         {
+            if(Config.main.isNoIDFASDK&&isiOS)
+            {
+                return true;
+            }
             string key = "APP_NO_AD";
             int ret = PlayerPrefs.GetInt(key, 0);
             if (ret > 0)

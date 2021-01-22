@@ -220,7 +220,11 @@ public static class BuildiOSPlayer
         AddLibToProject(pbxProj, unityFrameworkTargetGuid, "libsqlite3.tbd");
         if (!isOldUnity)
         {
-            AddFileToProject(projPath, pbxProj, targetGuid, "Frameworks/Plugins/iOS/ThirdParty/chsj/BUAdSDK.bundle");
+            if(!Config.main.isNoIDFASDK)
+            {
+                AddFileToProject(projPath, pbxProj, targetGuid, "Frameworks/Plugins/iOS/ThirdParty/chsj/BUAdSDK.bundle");
+            }
+            
         }
 
         //chsj
