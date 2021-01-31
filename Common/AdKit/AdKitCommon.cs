@@ -28,7 +28,7 @@ public class AdKitCommon : MonoBehaviour
     public static AdKitCommon main;
     public bool enableBanner = true;
     bool isAdVideoFinish;
-       public float heightAdWorld;
+    public float heightAdWorld;
     public float heightAdScreen;
     public float heightAdCanvas;
 
@@ -109,10 +109,10 @@ public class AdKitCommon : MonoBehaviour
 
     }
 
-     public void AdBannerSetScreenOffsetY(float y)
-     {
-         AdBanner.SetScreenOffset(0, (int)y);
-     }
+    public void AdBannerSetScreenOffsetY(float y)
+    {
+        AdBanner.SetScreenOffset(0, (int)y);
+    }
 
     public void InitAdInsert()
     {
@@ -120,7 +120,14 @@ public class AdKitCommon : MonoBehaviour
         {
             return;
         }
-
+        if (Config.main.channel == Source.HUAWEI)
+        {
+            // 华为不能  应用频繁弹窗恶意广告
+            if (Common.GetDayIndexOfUse() <= 1)
+            {
+                return;
+            }
+        }
         bool isShowAdInsert = false;
         if (AppVersion.appCheckHasFinished)
         {
@@ -226,6 +233,15 @@ public class AdKitCommon : MonoBehaviour
             if (Common.GetDayIndexOfUse() <= Config.main.NO_AD_DAY)
             {
                 return;
+            }
+
+            if (Config.main.channel == Source.HUAWEI)
+            {
+                // 华为不能  应用频繁弹窗恶意广告
+                if (Common.GetDayIndexOfUse() <= 1)
+                {
+                    return;
+                }
             }
         }
 

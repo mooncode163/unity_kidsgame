@@ -13,6 +13,7 @@ public class UIHomeCenterBar : UIView
     public Button btnAdVideo;
     public Button btnAddLove;
 
+    public UIButton btnEditor;
     void Awake()
     {
         // if (!Config.main.APP_FOR_KIDS)
@@ -43,6 +44,7 @@ public class UIHomeCenterBar : UIView
             }
         }
 
+        btnEditor.SetActive(Application.isEditor);
     }
     // Use this for initialization
     void Start()
@@ -92,6 +94,15 @@ public class UIHomeCenterBar : UIView
         }
     }
 
+    public void OnClickBtnEditor()
+    {
+        if (this.controller != null)
+        {
+            NaviViewController navi = this.controller.naviController;
+            navi.Push(EditorWordABCViewController.main);
+        }
+
+    }
     public void OnClickBtnLearn()
     {
 
@@ -135,12 +146,6 @@ public class UIHomeCenterBar : UIView
     public void OnClickBtnNormalWrite()
     {
         GotoGame(UIWordWrite.Mode.ALL_STROKE);
-    //  if (this.controller != null)
-    //     {
-    //         NaviViewController navi = this.controller.naviController; 
-    //         navi.Push(EditorWordABCViewController.main);
-    //     }        
-
     }
 
     public void OnClickBtnFreeWrite()

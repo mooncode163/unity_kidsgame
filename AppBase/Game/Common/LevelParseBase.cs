@@ -56,6 +56,7 @@ public class LevelParseBase
             return;
         }
         string filepath = CloudRes.main.rootPathGameRes +"/place/place_list.json";
+       Debug.Log("ParsePlaceList filepath ="+filepath);
         byte[] data = FileUtil.ReadDataAuto(filepath);
         ParsePlaceList(data);
     }
@@ -64,6 +65,7 @@ public class LevelParseBase
     {
         if (data == null)
         {
+             Debug.Log("ParsePlaceList data == null");
             return;
         }
         if ((_listPlace != null) && (_listPlace.Count != 0))
@@ -94,10 +96,11 @@ public class LevelParseBase
             info.pic = filepath + ".png";
             if (!FileUtil.FileIsExistAsset(info.pic))
             {
+                Debug.Log("ParsePlaceList info.pic= "+info.pic);
                 info.pic = filepath + ".jpg";
             }
             info.gameType = JsonUtil.GetString(item, "game", JsonUtil.GetString(item, "game_type", ""));
-            info.gameId = JsonUtil.GetString(item, "gameId", "");
+            info.gameId = JsonUtil.GetString(item, "gameId", info.id);
             info.type = JsonUtil.GetString(item, "type", PLACE_ITEM_TYPE_NONE);
             info.title = JsonUtil.GetString(item, "title", "STR_PLACE_" + info.id);
             info.icon = info.pic;

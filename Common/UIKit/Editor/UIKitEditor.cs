@@ -30,6 +30,14 @@ public class UIKitEditor : Editor
         EditorWindow.GetWindow(typeof(UIEditorCreateController));
     }
 
+
+     [MenuItem(KEY_MENU_GameObject_UI + "/CreateGameSampleCode", false, 4)] 
+    static void CreateGameSampleCode()
+    {
+        //弹出窗口
+        EditorWindow.GetWindow(typeof(UIEditorCreateGameSampleCode));
+    }
+
     [MenuItem(KEY_MENU_GameObject_UI + "/UIView", false, 4)]
     static void CreateUIView()
     {

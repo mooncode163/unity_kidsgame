@@ -38,10 +38,10 @@ public class CloudRes
         get
         {
             string ret = "";
-             string dirRoot = Application.temporaryCachePath;
+            string dirRoot = Application.temporaryCachePath;
             if (enable)
             {
-               
+
                 ret = dirRoot + "/" + Common.GAME_RES_DIR;
                 //创建文件夹
                 // FileUtil.CreateDir(ret);
@@ -51,26 +51,29 @@ public class CloudRes
                 ret = Common.GAME_RES_DIR;
             }
 
-              if (Application.isEditor||GameManager.main.isLoadGameScreenShot)
-                {
-                    // F:\sourcecode\unity\product\kidsgame\kidsgameUnity\Assets
-                    // 模拟测试 debug
-                    // dirRoot = Application.dataPath;
-                    // dirRoot = FileUtil.GetFileDir(dirRoot);
-                    // dirRoot = FileUtil.GetFileDir(dirRoot);
-                    // dirRoot += "/tmp";
-                    // ret = dirRoot + "/" + Common.GAME_RES_DIR;
+            if (Application.isEditor || GameManager.main.isLoadGameScreenShot)
+            {
+                // F:\sourcecode\unity\product\kidsgame\kidsgameUnity\Assets
+                // 模拟测试 debug
+                // dirRoot = Application.dataPath;
+                // dirRoot = FileUtil.GetFileDir(dirRoot);
+                // dirRoot = FileUtil.GetFileDir(dirRoot);
+                // dirRoot += "/tmp";
+                // ret = dirRoot + "/" + Common.GAME_RES_DIR;
 
-                    // 实际地址
-                    dirRoot = Resource.dirResourceDataApp;
-                    ret = dirRoot + "/" + Common.GAME_RES_DIR;
-                    // 判断文件数量多的时候比较费时间
-                    if (!FileUtil.DirIsExist(dirRoot))
-                    {
-                        dirRoot = Resource.dirGameResCommon;
-                        ret = dirRoot + "/" + Common.appKeyName;
-                    }
+                // 实际地址
+                dirRoot = Resource.dirResourceDataApp;
+                ret = dirRoot + "/" + Common.GAME_RES_DIR;
+                // 判断文件数量多的时候比较费时间
+                if (!FileUtil.DirIsExist(ret))
+                {
+                    dirRoot = Resource.dirGameResCommon;
+                    ret = dirRoot + "/" + Common.appKeyName;
+                     Debug.Log("CloudRes dirGameResCommon=" + dirRoot);
+                }else{
+                    Debug.Log("CloudRes dirResourceDataApp=" + dirRoot);
                 }
+            }
             Debug.Log("CloudRes rootPath=" + ret);
             return ret;
         }
@@ -82,19 +85,19 @@ public class CloudRes
         {
 
 
-           if (GameManager.main.isLoadGameScreenShot)
+            if (GameManager.main.isLoadGameScreenShot)
             {
                 return false;
-            } 
-                     if (Common.BlankString(Config.main.urlGameRes))
+            }
+            if (Common.BlankString(Config.main.urlGameRes))
             {
                 return false;
-            } 
-              if (Application.isEditor)
+            }
+            if (Application.isEditor)
             {
                 return true;
             }
-   
+
             if (Config.main.channel == Source.GP)
             {
                 return true;

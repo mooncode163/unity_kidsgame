@@ -34,6 +34,7 @@ public class ToolEditor : Editor
 
     }
 
+   
 
     [MenuItem(KEY_MENU_GameObject + "/MakeConfigPrefabImage", false, 4)]
     static public void MakeConfigPrefabAndImage()

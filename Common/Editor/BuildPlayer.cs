@@ -103,7 +103,8 @@ public class BuildPlayer
         if (target == "IOS")
         {
             //target_dir = applicationPath + "/OutPut/iOS";
-            target_dir = FileUtil.GetLastDir(applicationPath) + "/project_ios";
+            // target_dir = FileUtil.GetLastDir(applicationPath) + "/project_ios";
+            target_dir = Resource.dirProjectIos;
             // target_name = app_name;
             target_name = PlayerSettings.productName + "_device" + "_" + Common.appType + "_" + Common.appKeyName;// "iOS";
             targetGroup = BuildTargetGroup.iOS;

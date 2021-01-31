@@ -338,7 +338,7 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
     }
     public void DoUnLockLevelAlert()
     {
-        string title = Language.main.GetString("STR_UIVIEWALERT_TITLE_UnlockLevel");
+        string title =  Language.main.GetString("STR_UIVIEWALERT_TITLE_UnlockLevel");
         string msg = Language.main.GetString("STR_UIVIEWALERT_MSG_UnlockLevel");
         string yes = Language.main.GetString("STR_UIVIEWALERT_YES_UnlockLevel");
         string no = Language.main.GetString("STR_UIVIEWALERT_NO_UnlockLevel");
@@ -359,7 +359,7 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
         // string no = Language.main.GetString(AppString.STR_UIVIEWALERT_YES_SHOP_START_BUY);
         // viewAlert.SetText(title, msg, yes, no);
         // viewAlert.Show();
-        string  product = Common.GetAppPackage() + "." + "unlocklevel";
+        string  product = Common.GetAppPackage() + "." + IAPConfig.main.GetIdByKey("unlocklevel");
         if (isRestore)
         {
             IAP.main.RestoreBuy(product);

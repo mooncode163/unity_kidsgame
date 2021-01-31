@@ -159,7 +159,7 @@ public class FileUtil
         // if (Application.isEditor || GameManager.main.isLoadGameScreenShot)
         if (isCloudRes())
         {
-            if (file.Contains("GameRes/"))
+          if (file.Contains("GameRes/")||file.Contains("GameResCommon/"))
             {
                 Debug.Log("ReadDataAsset GameRes file =" + file);
                 // filePath = FileUtil.GetFileDir(CloudRes.main.rootPathGameRes)+ "/" + file;
@@ -345,7 +345,7 @@ public class FileUtil
         // if (Application.isEditor || GameManager.main.isLoadGameScreenShot)
         if (isCloudRes())
         {
-            if (file.Contains("GameRes/"))
+            if (file.Contains("GameRes/")||file.Contains("GameResCommon/"))
             {
                 filePath = file;
                 // filePath = Resource.dirResourceDataApp + "/" + file;
@@ -489,7 +489,11 @@ public class FileUtil
         return Directory.Exists(dir);
 
     }
+    static public void Rename(string filepath, string filepathnew)
+    {
+        File.Move(filepath, filepathnew);
 
+    }
 
     static public void DeleteDir(string dir)
     {

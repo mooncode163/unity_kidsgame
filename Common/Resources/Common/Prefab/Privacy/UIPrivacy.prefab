@@ -603,7 +603,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6605261206816307799}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.01
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   keyImageH: 
   title: {fileID: 3537955752328019883}
   isFitFontWidth: 1
-  offsetW: 32
+  offsetW: 64
   width: 0
 --- !u!1 &2457100024887836019
 GameObject:
@@ -1569,7 +1569,7 @@ MonoBehaviour:
   keyImageH: 
   title: {fileID: 554300403557855064}
   isFitFontWidth: 1
-  offsetW: 32
+  offsetW: 64
   width: 0
 --- !u!1 &3766237731812084258
 GameObject:
@@ -2409,7 +2409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyText: 
   keyColor: 
-  keyImage: IMAGE_BTN_COMMON
+  keyImage: BtnCommon
   keyImageH: 
   image: {fileID: 3839845533603342657}
   keyImage2: 
@@ -2847,7 +2847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyText: 
   keyColor: 
-  keyImage: IMAGE_BTN_COMMON
+  keyImage: BtnCommon
   keyImageH: 
   image: {fileID: 2333505223356492060}
   keyImage2: 

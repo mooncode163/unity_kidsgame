@@ -19,6 +19,9 @@ public class UIEditorWordABCController : UIView
     List<string> listImage = new List<string>();
     List<AbcWordPointJsonItemInfo> listPoint = new List<AbcWordPointJsonItemInfo>();
     public UIImage imageWord;
+    public UIText textStatus;
+
+    public UIButton btnYes;
     bool isStarted = false;
     string idWord;
     int indexWord;
@@ -38,7 +41,7 @@ public class UIEditorWordABCController : UIView
         ScanImageFiles(dirlower, listImage);
         ScanImageFiles(dirupper, listImage);
 
-        indexWord = 0;
+        GetFirstWordIndex();
         UpdateWordImage();
     }
 
@@ -54,6 +57,40 @@ public class UIEditorWordABCController : UIView
     void LoadPrefab()
     {
 
+    }
+    void GetFirstWordIndex()
+    {
+        indexWord = 0;
+        for (int i = 0; i < listImage.Count; i++)
+        {
+            string filepath = listImage[i];
+            idWord = FileUtil.GetFileName(filepath);
+            string savepath = GetSavePathWord(idWord);
+            if (!FileUtil.FileIsExist(savepath))
+            {
+                indexWord = i;
+                break;
+            }
+        }
+    }
+
+
+    bool GetNextWordIndex()
+    {
+        bool isFind = false;
+        for (int i = (indexWord + 1); i < listImage.Count; i++)
+        {
+            string filepath = listImage[i];
+            idWord = FileUtil.GetFileName(filepath);
+            string savepath = GetSavePathWord(idWord);
+            if (!FileUtil.FileIsExist(savepath))
+            {
+                indexWord = i;
+                isFind = true;
+                break;
+            }
+        }
+        return isFind;
     }
     static public void ScanImageFiles(string dir, List<string> list)
     {
@@ -144,11 +181,27 @@ public class UIEditorWordABCController : UIView
         }
 
     }
-
-
+    public string GetSavePathWord(string word)
+    {
+        string fileword = listImage[indexWord];
+        string dirname = "lower";
+        if (fileword.IndexOf("/image/lower") < 0)
+        {
+            dirname = "upper";
+        }
+        string filepath = CloudRes.main.rootPathGameRes + "/guanka/" + dirname + "/" + word + ".json";
+        string dir = FileUtil.GetFileDir(filepath);
+        FileUtil.CreateDir(dir);
+        return filepath;
+    }
     public override void LayOut()
     {
         base.LayOut();
+    }
+
+       public void OnClickBtnYes()
+    {
+        
     }
     public void OnClickBtnStart()
     {
@@ -164,15 +217,27 @@ public class UIEditorWordABCController : UIView
         }
         listDotImage.Clear();
     }
+
+    public void OnClickBtnDelLast()
+    {
+        if (listDotImage.Count == 0)
+        {
+            return;
+        }
+        UIImage ui = listDotImage[listDotImage.Count - 1];
+        GameObject.DestroyImmediate(ui.gameObject);
+        listDotImage.Remove(ui);
+
+        listPoint.RemoveAt(listPoint.Count-1);
+    }
     public void OnClickBtnSave()
     {
-
         //save guanka json
         {
             Hashtable data = new Hashtable();
             data["items"] = listPoint;
             string strJson = JsonMapper.ToJson(data);
-            string filepath = CloudRes.main.rootPathGameRes + "/guanka/" + idWord + ".json";
+            string filepath = GetSavePathWord(idWord);
             byte[] bytes = Encoding.UTF8.GetBytes(strJson);
             System.IO.File.WriteAllBytes(filepath, bytes);
         }
@@ -181,16 +246,25 @@ public class UIEditorWordABCController : UIView
     public void OnClickBtnNext()
     {
         OnClickBtnClear();
-        indexWord++;
-        if (indexWord >= listImage.Count)
+        // indexWord++;
+        // if (indexWord >= listImage.Count)
+        // {
+        //     indexWord = 0;
+        // }
+
+        if (GetNextWordIndex())
         {
-            indexWord = 0;
+
+            UpdateWordImage();
         }
-        UpdateWordImage();
+        else
+        {
+            Debug.Log("GetNextWordIndex Fail,All Finished");
+        }
     }
     public void OnClickBtnPre()
     {
-         OnClickBtnClear();
+        OnClickBtnClear();
         indexWord--;
         if (indexWord < 0)
         {

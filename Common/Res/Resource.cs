@@ -139,7 +139,8 @@ public class Resource
     {
         get
         {
-            string str = FileUtil.GetLastDir(dirResourceData) + "/project_ios";
+            // string str = FileUtil.GetLastDir(dirResourceData) + "/project_ios";
+            string str = dirProduct + "/project_ios";
             return str;
         }
     }
@@ -147,7 +148,7 @@ public class Resource
     {
         get
         {
-            string str = FileUtil.GetLastDir(dirResourceData) + "/project_ios/" + "game_device_" + Common.appType + "_" + Common.appKeyName;
+            string str = dirProduct + "/project_ios/" + "game_device_" + Common.appType + "_" + Common.appKeyName;
             return str;
         }
     }

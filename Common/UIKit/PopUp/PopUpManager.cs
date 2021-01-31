@@ -25,9 +25,10 @@ public class PopUpManager : MonoBehaviour
     {
         main = this;
     }
-       public void ShowPannl(bool show)
-    { 
-        if(panel==null){
+    public void ShowPannl(bool show)
+    {
+        if (panel == null)
+        {
             return;
         }
         panel.gameObject.SetActive(show);
@@ -55,7 +56,10 @@ public class PopUpManager : MonoBehaviour
         // }
         yield return null;
         GameObject objPrefab = PrefabCache.main.Load(popupName);
-
+        if (objPrefab == null)
+        {
+            objPrefab = PrefabCache.main.LoadByKey(popupName);
+        }
         Canvas canvas = AppSceneBase.main.canvasMain;
         panel = new GameObject("Panel");
         var panelImage = panel.AddComponent<Image>();

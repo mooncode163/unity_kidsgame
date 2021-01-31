@@ -90,6 +90,7 @@ public class LevelManager
     }
     public ItemInfo GetPlaceItemInfo(int idx)
     {
+        ParsePlaceList();
         return GameLevelParse.main.GetPlaceItemInfo(idx);
     }
 

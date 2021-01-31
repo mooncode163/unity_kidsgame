@@ -224,11 +224,11 @@ public class Config
             {
                 ret = false;
             }
-            if(Common.isiOS)
+            if (Common.isiOS)
             {
-                if(Config.main.isNoIDFASDK)
+                if (Config.main.isNoIDFASDK)
                 {
-                   ret = false; 
+                    ret = false;
                 }
             }
             return ret;
@@ -276,7 +276,17 @@ public class Config
     {
         get
         {
-            return GetStringCommon("PrivacyPolicy", "PrivacyPolicy_chyfemail163@163.com.txt");
+            if (Language.main.IsChinese())
+            {
+                return GetString("PrivacyPolicy", "PrivacyPolicy_chyfemail163@163.com.txt");
+            }
+            else
+            {
+                return GetString("PrivacyPolicy_en", "PrivacyPolicy_chyfemail163@163.com_en.txt");
+
+            }
+
+
         }
     }
 
