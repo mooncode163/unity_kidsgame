@@ -159,7 +159,7 @@ public class FileUtil
         // if (Application.isEditor || GameManager.main.isLoadGameScreenShot)
         if (isCloudRes())
         {
-          if (file.Contains("GameRes/")||file.Contains("GameResCommon/"))
+            if (file.Contains("GameRes/") || file.Contains("GameResCommon/"))
             {
                 Debug.Log("ReadDataAsset GameRes file =" + file);
                 // filePath = FileUtil.GetFileDir(CloudRes.main.rootPathGameRes)+ "/" + file;
@@ -338,14 +338,17 @@ public class FileUtil
     //file 为相对路径
     static public bool FileIsExistAsset(string file)
     {
-
+        if(Common.BlankString(file))
+        {
+            return false;
+        }
         string fileDir = Application.streamingAssetsPath;
 
         string filePath = fileDir + "/" + file;
         // if (Application.isEditor || GameManager.main.isLoadGameScreenShot)
         if (isCloudRes())
         {
-            if (file.Contains("GameRes/")||file.Contains("GameResCommon/"))
+            if (file.Contains("GameRes/") || file.Contains("GameResCommon/"))
             {
                 filePath = file;
                 // filePath = Resource.dirResourceDataApp + "/" + file;
@@ -645,4 +648,10 @@ public class FileUtil
         }
 
     }
+    static public void DeleteDir2(string dir)
+    {
+        DirectoryInfo di = new DirectoryInfo(dir);
+        di.Delete(true);
+    }
+
 }

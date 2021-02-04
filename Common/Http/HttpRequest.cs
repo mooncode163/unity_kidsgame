@@ -39,12 +39,13 @@ public class HttpRequest
     }
     public void Get(string url)
     {
-        // Debug.Log("HttpRequest Get");
+        Debug.Log("HttpRequest Get start");
     
         strUrl = url;
         isReadFromCatch = false;
         if (EnableReadFromCache())
         {
+             Debug.Log("HttpRequest Get EnableReadFromCache");
             string filePath = GetCatchFilePathOfUrl(url);
             bool isExist = File.Exists(filePath);
             if (isExist)
@@ -71,7 +72,7 @@ public class HttpRequest
         }
 
         // StartCoroutine(WWWGet(url));
-        Debug.Log("HTTPRequest:url=" + url);
+        Debug.Log("HttpRequest Get:url=" + url);
         //@moon:HTTPRequest 如果用局部变量 windows 10 uwp il2cpp 运行时socket io会crash,故而用成员变量
         reqHttp = new HTTPRequest(new Uri(url), HTTPMethods.Get, OnRequestFinished);
         //ios6 ua

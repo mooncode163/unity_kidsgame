@@ -11,6 +11,7 @@ using Moonma.AdKit.AdNative;
 public delegate void OnAdKitFinishDelegate(AdKitCommon.AdType type, AdKitCommon.AdStatus status, string str);
 public class AdKitCommon : MonoBehaviour
 {
+    public const int INSERT_NOAD_DAY = 1;
     public enum AdType
     {
         BANNER = 0,
@@ -31,9 +32,27 @@ public class AdKitCommon : MonoBehaviour
     public float heightAdWorld;
     public float heightAdScreen;
     public float heightAdCanvas;
-
+    public int adinsertNoadDay;
     public OnAdKitFinishDelegate callbackFinish { get; set; }
     public OnAdKitFinishDelegate callbackAdVideoFinish { get; set; }
+
+    public async void GetIPInfo()
+    {
+        // return;
+        Debug.Log("IPInfo GetIPInfo start");
+        int ret = 0;
+         Debug.Log("IPInfo GetIPInfo   0");
+        await IPInfo.main.GetIpInfoAsync();
+         Debug.Log("IPInfo GetIPInfo   1");
+        if (IPInfo.main.IsHuaweiAppStoreCheck())
+        {
+            ret = INSERT_NOAD_DAY;
+        }
+         Debug.Log("IPInfo GetIPInfo   2");
+        adinsertNoadDay = ret;
+
+        Debug.Log("IPInfo GetIPInfo adinsertNoadDay =" + adinsertNoadDay);
+    }
 
 
     /// <summary>
@@ -46,6 +65,7 @@ public class AdKitCommon : MonoBehaviour
             main = this;
         }
         isAdVideoFinish = false;
+        // GetIPInfo();
         // enableBanner = true;
     }
 
@@ -120,10 +140,11 @@ public class AdKitCommon : MonoBehaviour
         {
             return;
         }
+        GetIPInfo();
         if (Config.main.channel == Source.HUAWEI)
         {
             // 华为不能  应用频繁弹窗恶意广告
-            if (Common.GetDayIndexOfUse() <= 1)
+            if (Common.GetDayIndexOfUse() <= adinsertNoadDay)
             {
                 return;
             }
@@ -238,7 +259,7 @@ public class AdKitCommon : MonoBehaviour
             if (Config.main.channel == Source.HUAWEI)
             {
                 // 华为不能  应用频繁弹窗恶意广告
-                if (Common.GetDayIndexOfUse() <= 1)
+                if (Common.GetDayIndexOfUse() <= adinsertNoadDay)
                 {
                     return;
                 }

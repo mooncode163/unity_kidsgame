@@ -10,8 +10,8 @@ public class IAPInfo
 {
     public string id;
     public string key;
-    public string title;
-    public string detail;
+    public Dictionary<string, string> dicTitle;
+    public Dictionary<string, string> dicDetail;
     public bool isConsume;
     public string price_tier;
 
@@ -141,6 +141,7 @@ public class IAPConfig
                     "price_tier": "3"
         */
         JsonData jsonitems = rootJson["items"];
+        string[] listLan = { Source.Language_cn, Source.Language_en };
         foreach (JsonData item in jsonitems)
         {
             IAPInfo info = new IAPInfo();
@@ -148,6 +149,19 @@ public class IAPConfig
             info.id = (string)item["id"];
             info.isConsume = (bool)item["isConsume"];
             info.price_tier = (string)item["price_tier"];
+            JsonData title = item["title"];
+            info.dicTitle = new Dictionary<string, string>();
+            foreach (string lan in listLan)
+            {
+                info.dicTitle.Add(lan, (string)title[lan]);
+            }
+
+            JsonData detail = item["detail"];
+            info.dicDetail = new Dictionary<string, string>();
+            foreach (string lan in listLan)
+            {
+                info.dicDetail.Add(lan, (string)detail[lan]);
+            }
             listProduct.Add(info);
 
         }
@@ -157,7 +171,53 @@ public class IAPConfig
     }
 
 
-   public string GetIdByKey(string key)
+    public string GetProductTitle(string key)
+    {
+        foreach (IAPInfo info in listProduct)
+        {
+            if (info.key == key)
+            {
+                string lan = "";
+
+                if (Language.main.IsChinese())
+                {
+                    lan = Source.Language_cn;
+                }
+                else
+                {
+                    lan = Source.Language_en;
+
+                }
+                return info.dicTitle[lan];
+            }
+
+        }
+        return "";
+    }
+    public string GetProductDetail(string key)
+    {
+        foreach (IAPInfo info in listProduct)
+        {
+            if (info.key == key)
+            {
+                string lan = "";
+
+                if (Language.main.IsChinese())
+                {
+                    lan = Source.Language_cn;
+                }
+                else
+                {
+                    lan = Source.Language_en;
+
+                }
+                return info.dicDetail[lan];
+            }
+
+        }
+        return "";
+    }
+    public string GetIdByKey(string key)
     {
         foreach (IAPInfo info in listProduct)
         {

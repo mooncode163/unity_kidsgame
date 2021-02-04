@@ -28,16 +28,34 @@ public class PrefabCache
     {
         dicItem = new Dictionary<string, GameObject>();
     }
-
+    public T LoadByKey<T>(string key) where T : new()
+    {
+        GameObject obj = LoadByKey(key);
+        if (obj == null)
+        {
+            return default(T);
+        }
+        return obj.GetComponent<T>();
+    }
 
     public GameObject LoadByKey(string key)
     {
         return Load(ConfigPrefab.main.GetPrefab(key));
     }
+
+    public T Load<T>(string filepath) where T : new()
+    {
+        GameObject obj = Load(filepath);
+        if (obj == null)
+        {
+            return default(T);
+        }
+        return obj.GetComponent<T>();
+    }
     public GameObject Load(string filepath)
     {
         GameObject obj = null;
-        string key = filepath.Replace(".prefab","");
+        string key = filepath.Replace(".prefab", "");
         if (dicItem.ContainsKey(key))
         {
             obj = dicItem[key];

@@ -338,8 +338,9 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
     }
     public void DoUnLockLevelAlert()
     {
-        string title =  Language.main.GetString("STR_UIVIEWALERT_TITLE_UnlockLevel");
-        string msg = Language.main.GetString("STR_UIVIEWALERT_MSG_UnlockLevel");
+        string key = "unlocklevel";
+        string title = IAPConfig.main.GetProductTitle(key);// Language.main.GetString("STR_UIVIEWALERT_TITLE_UnlockLevel");
+        string msg =IAPConfig.main.GetProductDetail(key);// Language.main.GetString("STR_UIVIEWALERT_MSG_UnlockLevel");
         string yes = Language.main.GetString("STR_UIVIEWALERT_YES_UnlockLevel");
         string no = Language.main.GetString("STR_UIVIEWALERT_NO_UnlockLevel");
 

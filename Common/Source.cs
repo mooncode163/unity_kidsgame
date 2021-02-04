@@ -41,4 +41,9 @@ public class Source
     public const string MOONMA = "moonma";
     public const string BAIDU = "baidu";
     public const string CHSJ = "chsj";//穿山甲
+
+
+    // language
+    public const string Language_cn = "cn";
+    public const string Language_en = "en";
 }

@@ -65,10 +65,10 @@ public class UIEditorCreateGameSampleCode : EditorWindow
         FileUtil.Rename(filepath, filepathnew);
     }
 
-    // 先拷贝 GameProjectSample 然后再执行make
+    // 先拷贝 GameProjectSample/Code 然后再执行make
     void OnCreateSampleCode(string key)
     {
-        string dirSampleCode = Resource.dirProductCommon + "/PythonUnity/GameProjectSample";
+        string dirSampleCode = Resource.dirProductCommon + "/PythonUnity/GameProjectSample/Code";
         string dirDstCode = Resource.dirScript + "/Apps/" + key;
 
         if (Directory.Exists(dirDstCode))
@@ -97,11 +97,39 @@ public class UIEditorCreateGameSampleCode : EditorWindow
             ChangeFile(filepath, key);
         }
 
-          dirDstCode = Resource.dirScript + "/Apps/GameProjectSample";
+        dirDstCode = Resource.dirScript + "/Apps/GameProjectSample";
         FileUtil.DeleteDir(dirDstCode);
 
-    
 
+        // prefab
+        {
+            string dirsrc = Resource.dirProductCommon + "/PythonUnity/GameProjectSample/Resources/App";
+            string dirdst = Application.dataPath + "/Resources/App";
+            FileUtil.DeleteDir2(dirdst);
+            FileUtil.CopyDir(dirsrc, dirdst);
+
+
+        }
+        {
+            string dirsrc = Resource.dirProductCommon + "/PythonUnity/GameProjectSample/Resources/AppCommon";
+            string dirdst = Application.dataPath + "/Resources/AppCommon";
+            FileUtil.DeleteDir2(dirdst);
+            FileUtil.CopyDir(dirsrc, dirdst);
+
+
+
+        }
+
+        {
+            string filepath = Application.dataPath + "/Resources/AppCommon/Prefab/Home/UIHomeSample.prefab";
+            string filepathnew = filepath.Replace("Sample", key);
+            FileUtil.Rename(filepath, filepathnew);
+        }
+           {
+            string filepath = Application.dataPath + "/Resources/AppCommon/Prefab/Game/GameSample.prefab";
+            string filepathnew = filepath.Replace("Sample", key);
+            FileUtil.Rename(filepath, filepathnew);
+        }
     }
 
 }
