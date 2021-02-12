@@ -80,7 +80,7 @@ public class HomeViewController : UIViewController
             app.StartParseVersion();
 
 
-            TestIPInfo();
+            // TestIPInfo();
         }
     }
 

@@ -60,15 +60,21 @@ public class BuildPlayer
     }
 
 
-   [MenuItem(KEY_MENU_ROOT + "/Screenshot")]
+    [MenuItem(KEY_MENU_ROOT + "/Screenshot")]
     static void ScreenshotBuild()
     {
-        Debug.Log("ScreenshotBuild start"); 
+        Debug.Log("ScreenshotBuild start");
 
         BulidTarget("QQ", "Screenshot");
         Debug.Log("ScreenshotBuild end");
     }
 
+    [MenuItem(KEY_MENU_ROOT + "/Export Android & iOS")]
+    static void PerformAndroidAndiOSBuild()
+    {
+        PerformAndroidBuild();
+        PerformiPhoneBuild();
+    }
     static void ConverIcon()
     {
 
@@ -83,6 +89,9 @@ public class BuildPlayer
     static void BulidTarget(string name, string target)
     {
         ConverIcon();
+        
+        ToolEditor.MakeConfigPrefabAndImage();
+
         string app_name = name;
         string target_dir = Application.dataPath + "/OutPut";
         string target_name = name + ".apk";
@@ -115,19 +124,19 @@ public class BuildPlayer
         if (target == "Screenshot")
         {
             //target_dir = applicationPath + "/OutPut/iOS";
-            target_dir = Resource.dirProduct+"/bin";
+            target_dir = Resource.dirProduct + "/bin";
             // target_name = app_name;
             target_name = PlayerSettings.productName;
             targetGroup = BuildTargetGroup.Standalone;
             buildTarget = BuildTarget.StandaloneOSX;
-             if (Application.platform == RuntimePlatform.WindowsEditor)
+            if (Application.platform == RuntimePlatform.WindowsEditor)
             {
                 buildTarget = BuildTarget.StandaloneWindows;
             }
 
 
         }
-        
+
         dirRootProject = target_dir + "/" + target_name;
         //每次build删除之前的残留
         if (Directory.Exists(dirRootProject))

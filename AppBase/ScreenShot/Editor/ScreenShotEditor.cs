@@ -38,6 +38,13 @@ public class ScreenShotEditor : Editor
         ImageConvert.main.OnConvertScreenShot();
     }
 
+    [MenuItem(KEY_MENU_GameObject_UI + "/DeleteAllScreenShot", false, 4)]
+    static void OnDeleteAllScreenShot()
+    {
+        string dir = AppsConfig.ROOT_DIR_PC + "/ProjectOutPut/" + Common.appType + "/" + Common.appKeyName+"/screenshot";
+        FileUtil.DeleteDir(dir);
+    }
+
     [MenuItem(KEY_MENU_GameObject_UI + "/CopyRight", false, 4)]
     static void OnCopyRight()
     {

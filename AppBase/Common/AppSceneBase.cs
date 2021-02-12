@@ -33,9 +33,14 @@ public class AppSceneBase : ScriptBase
 
     void Awake()
     {
+        Debug.Log("AppSceneBase Awake");
         if (AppSceneBase.main == null)
         {
             AppSceneBase.main = this;
+        }
+        else{
+             Debug.Log("AppSceneBase main is not null");
+            // return;
         }
         isReLayout = false;
         IPInfo.main.StartParserInfo();

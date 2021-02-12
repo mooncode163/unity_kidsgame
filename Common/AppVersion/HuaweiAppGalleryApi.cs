@@ -43,14 +43,14 @@ public class HuaweiAppGalleryApi
         await Task.Run(() =>
         {
             StartGetToken();
-            Debug.Log("Task Async Executed");
+           // Debug.Log("Task Async Executed");
             while (Common.BlankString(accessToken))
             {
-                Debug.Log("wait for accessToken");
+              //  Debug.Log("wait for accessToken");
                 Thread.Sleep(10);
             }
         });
-        Debug.Log("Task End");
+      //  Debug.Log("Task End");
         return accessToken;
     }
     public async void GetToken()
@@ -109,16 +109,16 @@ public class HuaweiAppGalleryApi
         await Task.Run(() =>
         {
             string url = "https://connect-api.cloud.huawei.com/api/publish/v2/app-info?appId=" + appId;
-            Debug.Log("HuaweiAppGalleryApi GetVersion url=" + url);
+            //Debug.Log("HuaweiAppGalleryApi GetVersion url=" + url);
             HTTPRequest reqHttp = new HTTPRequest(new Uri(url), HTTPMethods.Get, OnRequestFinishedVersion);
             reqHttp.AddHeader("Content-Type", "application/json");
             reqHttp.AddHeader("client_id", ClientId);
             reqHttp.AddHeader("Authorization", "Bearer " + accessToken);
             reqHttp.Send();
-            Debug.Log("Task Async Executed");
+           // Debug.Log("Task Async Executed");
             while (Common.BlankString(appVersion))
             {
-                Debug.Log("waiting for appVersion");
+               // Debug.Log("waiting for appVersion");
                 Thread.Sleep(10);
             }
         });

@@ -19,7 +19,7 @@ public class UIPrivacy : UIViewPop
     {
         base.Awake();
 
-        textTitle.text = "隐私政策";
+        // textTitle.text = "隐私政策";
            Debug.Log("ParsePrivacy Awake 1");
         textView.text = ParsePrivacy();
           Debug.Log("ParsePrivacy Awake 2 =");

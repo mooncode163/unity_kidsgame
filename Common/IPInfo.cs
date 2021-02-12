@@ -79,7 +79,7 @@ public class IPInfo
 
     public async Task<string> GetIpInfoAsync()
     {
-        Debug.Log("IPInfo GetIpInfoAsync start");
+       // Debug.Log("IPInfo GetIpInfoAsync start");
         if (isHttpFinish)
         {
             return "";
@@ -88,24 +88,24 @@ public class IPInfo
         // isHttpFinish = false;
         await Task.Run(() =>
         {
-            Debug.Log("IPInfo GetIpInfoAsync 1");
+           // Debug.Log("IPInfo GetIpInfoAsync 1");
             // HttpRequest httpReq = new HttpRequest(OnHttpRequestFinished);
             string url = "http://ip-api.com/json";
-            Debug.Log("IPInfo GetIpInfoAsync 2");
+          //  Debug.Log("IPInfo GetIpInfoAsync 2");
             // HttpRequest.get 在android上卡死 使用besthttp
             // httpReq.Get("http://ip-api.com/json");
 
             HTTPRequest reqHttp = new HTTPRequest(new Uri(url), HTTPMethods.Get, OnRequestFinishedBesthttp);
             reqHttp.Send();
 
-            Debug.Log("IPInfo GetIpInfoAsync 3");
+         //   Debug.Log("IPInfo GetIpInfoAsync 3");
             while (!isHttpFinish)
             {
-                Debug.Log("IPInfo GetIpInfoAsync waiting for isHttpFinish");
+             //   Debug.Log("IPInfo GetIpInfoAsync waiting for isHttpFinish");
                 Thread.Sleep(10);
             }
         });
-        Debug.Log("IPInfo GetIpInfoAsync end");
+     //   Debug.Log("IPInfo GetIpInfoAsync end");
         return "";
 
     }

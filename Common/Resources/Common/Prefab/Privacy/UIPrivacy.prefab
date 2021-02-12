@@ -603,7 +603,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6605261206816307799}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0
+  m_Size: 0.01
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91caf9b520b65ec4d9035f82e38aab9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyText: 
+  keyText: STR_Privacy_Title
   keyColor: LevelTitle
   keyImage: 
   keyImageH: 

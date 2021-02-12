@@ -115,6 +115,10 @@ public class GameManager
         // }
         if (Common.GetBool(UIPrivacy.KEY_DISABLE_UIPRIVACY))
         {
+            // if(Application.isEditor)
+            // {
+
+            // }
             return;
         }
         string strPrefab = ConfigPrefab.main.GetPrefab("UIPrivacy");

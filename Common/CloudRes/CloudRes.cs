@@ -186,10 +186,10 @@ public class CloudRes
             HttpRequest http = new HttpRequest(OnHttpRequestFinished);
             http.isEnableCache = false;
             http.Get(url);
-            Debug.Log("CloudRes Task Async Executed");
+          //  Debug.Log("CloudRes Task Async Executed");
             while (Common.BlankString(resVersionWeb))
             {
-                Debug.Log("CloudRes Task Async BlankString ");
+            //    Debug.Log("CloudRes Task Async BlankString ");
                 Thread.Sleep(2);
             }
         });
