@@ -11,7 +11,7 @@ public class LevelParseBase
     public const string PLACE_ITEM_TYPE_VIDEO = "video";
     public const string PLACE_ITEM_TYPE_LOCK = "lock";
 
-     public List<object> listGuanka;
+    public List<object> listGuanka;
     private List<object> _listPlace = null;
 
     public List<object> listGuankaItemId;//image id
@@ -55,8 +55,8 @@ public class LevelParseBase
             //已经解析完成
             return;
         }
-        string filepath = CloudRes.main.rootPathGameRes +"/place/place_list.json";
-       Debug.Log("ParsePlaceList filepath ="+filepath);
+        string filepath = CloudRes.main.rootPathGameRes + "/place/place_list.json";
+        Debug.Log("ParsePlaceList filepath =" + filepath);
         byte[] data = FileUtil.ReadDataAuto(filepath);
         ParsePlaceList(data);
     }
@@ -65,7 +65,7 @@ public class LevelParseBase
     {
         if (data == null)
         {
-             Debug.Log("ParsePlaceList data == null");
+            Debug.Log("ParsePlaceList data == null");
             return;
         }
         if ((_listPlace != null) && (_listPlace.Count != 0))
@@ -92,11 +92,11 @@ public class LevelParseBase
             JsonData item = items[i];
             ItemInfo info = new ItemInfo();
             info.id = JsonUtil.GetString(item, "id", "");
-            string filepath = CloudRes.main.rootPathGameRes +"/place/image/" + info.id;
+            string filepath = CloudRes.main.rootPathGameRes + "/place/image/" + info.id;
             info.pic = filepath + ".png";
             if (!FileUtil.FileIsExistAsset(info.pic))
             {
-                Debug.Log("ParsePlaceList info.pic= "+info.pic);
+                Debug.Log("ParsePlaceList info.pic= " + info.pic);
                 info.pic = filepath + ".jpg";
             }
             info.gameType = JsonUtil.GetString(item, "game", JsonUtil.GetString(item, "game_type", ""));
@@ -111,7 +111,7 @@ public class LevelParseBase
             GameManager.main.pathGamePrefab = JsonUtil.GetString(item, "prefab", "");
 
             info.isAd = false;
-            if (AppVersion.appCheckHasFinished && (!Common.noad))
+            if ((AppVersion.appCheckHasFinished && (!Common.noad)) || (Config.main.isNoIDFASDK && Common.isiOS))
             {
                 if (info.type == PLACE_ITEM_TYPE_VIDEO)
                 {
@@ -173,13 +173,13 @@ public class LevelParseBase
 
         // listGuanka = new List<object>();
         ItemInfo infoPlace = GetPlaceItemInfo(LevelManager.main.placeLevel);
-        string fileName = CloudRes.main.rootPathGameRes +"/guanka/item_" + infoPlace.id + ".json";
+        string fileName = CloudRes.main.rootPathGameRes + "/guanka/item_" + infoPlace.id + ".json";
         //FILE_PATH
         string json = FileUtil.ReadStringAsset(fileName); //((TextAsset)Resources.Load(fileName, typeof(TextAsset))).text;
         // Debug.Log("json::"+json);
         JsonData root = JsonMapper.ToObject(json);
         string type = (string)root["type"];
-        string picRoot = CloudRes.main.rootPathGameRes +"/image/" + type + "/";
+        string picRoot = CloudRes.main.rootPathGameRes + "/image/" + type + "/";
 
         //search_items
         JsonData items = root["items"];
@@ -210,6 +210,6 @@ public class LevelParseBase
     }
 
     public virtual void ParseItem(ItemInfo info)
-    { 
+    {
     }
 }

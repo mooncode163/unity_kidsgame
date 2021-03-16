@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public delegate void OnUITouchEventDelegate(UITouchEvent ev, PointerEventData eventData, int status);
+
+// 如果是世界物体需要添加碰撞体才能接受事件
+// PointerEventData  eventData.position 为屏幕坐标数据 eventData.pointerCurrentRaycast.worldPosition 为世界坐标
 //IDragHandler 会导致scrollview的滑动失效 所以和UITouchEventWithMove分开使用
 public class UITouchEvent : MonoBehaviour, IPointerUpHandler, IPointerDownHandler//, IDragHandler
 {

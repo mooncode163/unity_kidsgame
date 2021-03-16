@@ -19,6 +19,11 @@ using System.Text.RegularExpressions;
 2、执行下列语句：grep -r advertisingIdentifier .   （别少了最后那个点号）。
 */
 
+// xcode12 突然调试不进放方法体，跑到堆棧
+/*
+// https://www.cnblogs.com/jiduoduo/p/14408999.html
+解决：Debug -> Debug workflow -> Always show Disassembly（将勾选给去掉）
+*/
 public static class BuildiOSPlayer
 {
     ////该属性是在build完成后，被调用的callback
@@ -180,6 +185,7 @@ public static class BuildiOSPlayer
             unityFrameworkTargetGuid = pbxProj.GetUnityFrameworkTargetGuid();
             // AddLibToProject(pbxProj, unityFrameworkTargetGuid, "libxml2.tbd");
 
+            // admob sdk 8.0 之前
             AddFileToProject(projPath, pbxProj, targetGuid, "Libraries/AdmobBtnClose.png");
             AddFileToProject(projPath, pbxProj, targetGuid, "Libraries/Plugins/iOS/UnifiedNativeAdView.xib");
         }

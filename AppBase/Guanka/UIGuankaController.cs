@@ -30,20 +30,7 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
     HttpRequest httpReqLanguage;
     int indexClick;
 
-    static public bool isHaveUnlockLevel
-    {
-        get
-        {
-            string key = "key_HaveUnlockLevel";
-            return Common.Int2Bool(PlayerPrefs.GetInt(key, 0));
-        }
-        set
-        {
-            string key = "key_HaveUnlockLevel";
-            PlayerPrefs.SetInt(key, Common.Bool2Int(value));
 
-        }
-    }
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -298,12 +285,16 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
                 }
 
 
-                if ((Config.main.isNoIDFASDK&&Common.isiOS) && (!isHaveUnlockLevel))
+                // if ((Config.main.isNoIDFASDK && Common.isiOS) && (!GameManager.main.isHaveUnlockLevel))
+                if (Common.isiOS && (!GameManager.main.isHaveUnlockLevel))
                 {
                     enable = false;
                     // 内购解锁
                     OnUnLockLevelIAP();
                 }
+
+
+
             }
 
         }
@@ -340,7 +331,12 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
     {
         string key = "unlocklevel";
         string title = IAPConfig.main.GetProductTitle(key);// Language.main.GetString("STR_UIVIEWALERT_TITLE_UnlockLevel");
-        string msg =IAPConfig.main.GetProductDetail(key);// Language.main.GetString("STR_UIVIEWALERT_MSG_UnlockLevel");
+        string msg = IAPConfig.main.GetProductDetail(key);// Language.main.GetString("STR_UIVIEWALERT_MSG_UnlockLevel");
+        if((!Config.main.isNoIDFASDK)&&AppVersion.appCheckHasFinished)
+        {
+            msg+=","+Language.main.GetString("AndRemoveAd"); 
+        }
+
         string yes = Language.main.GetString("STR_UIVIEWALERT_YES_UnlockLevel");
         string no = Language.main.GetString("STR_UIVIEWALERT_NO_UnlockLevel");
 
@@ -360,7 +356,7 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
         // string no = Language.main.GetString(AppString.STR_UIVIEWALERT_YES_SHOP_START_BUY);
         // viewAlert.SetText(title, msg, yes, no);
         // viewAlert.Show();
-        string  product = Common.GetAppPackage() + "." + IAPConfig.main.GetIdByKey("unlocklevel");
+        string product = Common.GetAppPackage() + "." + IAPConfig.main.GetIdByKey("unlocklevel");
         if (isRestore)
         {
             IAP.main.RestoreBuy(product);
@@ -379,7 +375,7 @@ public class UIGuankaController : UIGuankaBase, ITableViewDataSource
 
         if ((str == IAP.UNITY_CALLBACK_BUY_DID_FINISH) || (str == IAP.UNITY_CALLBACK_BUY_DID_RESTORE))
         {
-            isHaveUnlockLevel = true;
+            GameManager.main.isHaveUnlockLevel = true;
 
             Loom.QueueOnMainThread(() =>
             {

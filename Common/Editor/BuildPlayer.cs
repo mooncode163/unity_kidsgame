@@ -89,8 +89,8 @@ public class BuildPlayer
     static void BulidTarget(string name, string target)
     {
         ConverIcon();
-        
-        ToolEditor.MakeConfigPrefabAndImage();
+
+        // ToolEditor.MakeConfigPrefabAndImage();
 
         string app_name = name;
         string target_dir = Application.dataPath + "/OutPut";
@@ -138,6 +138,10 @@ public class BuildPlayer
         }
 
         dirRootProject = target_dir + "/" + target_name;
+
+        // EditorXcode(target_dir + "/" + target_name);
+        // return;
+
         //每次build删除之前的残留
         if (Directory.Exists(dirRootProject))
         {
@@ -184,7 +188,16 @@ public class BuildPlayer
         FileUtil.CopyDir(src, dst);
         Debug.Log("BuildiOSPlayer copy gameres end ");
     }
-
+    static void EditorXcode(string target_dir)
+    {
+        // #if UNITY_IOS
+        Debug.Log("BuildiOSPlayer start ");
+        BuildiOSPlayer.EditProj(target_dir);
+        Debug.Log("BuildiOSPlayer end ");
+        // #endif
+        // copy gameres
+        CopyGameRes();
+    }
 
     //https://docs.unity3d.com/ScriptReference/BuildPipeline.BuildPlayer.html
 
@@ -203,7 +216,7 @@ public class BuildPlayer
         EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroup, build_target);
         // string res =
         BuildReport report = BuildPipeline.BuildPlayer(scenes, target_dir, build_target, build_options);
-
+        // BuildSummary summary;
         BuildSummary summary = report.summary;
         if (summary.result == BuildResult.Succeeded)
         {

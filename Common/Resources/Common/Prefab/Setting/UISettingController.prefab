@@ -71,7 +71,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1075}
   m_SizeDelta: {x: 0, y: 1300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &114359268055080266
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -226,6 +227,9 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
   objTableViewTemplate: {fileID: 1722268567936728}
   tableView: {fileID: 114666318449803432}
   textTitle: {fileID: 8669920158605192714}
@@ -295,6 +299,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -383,6 +388,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -439,7 +445,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224007605228986532}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.17307693
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -684,6 +690,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -757,6 +764,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -834,6 +842,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -899,6 +908,9 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
   title: {fileID: 0}
   isFitFontWidth: 0
   offsetW: 0
@@ -955,6 +967,9 @@ MonoBehaviour:
   keyText: STR_SETTING
   keyColor: LevelTitle
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
   title: {fileID: 5177415144392114055}
   isFitFontWidth: 1
   offsetW: 64
@@ -1019,6 +1034,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1084,8 +1100,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
-  image: {fileID: 4320744101663552764}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 4320744101663552764}
 --- !u!1 &6348543465893630865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,8 +1157,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: SettingBg
+  keyImage2: V_SettingBg
+  keyImageH: 
+  keyImageH2: H_SettingBg
   image: {fileID: 422848613557759670}
-  keyImage2: 
 --- !u!114 &3558470376572406719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,6 +1183,7 @@ MonoBehaviour:
   isOnlyForPortrait: 0
   space: {x: 0, y: 0}
   align: 4
+  target: {fileID: 0}
   _scaleType: 2
   ratio: 1
   _offsetMin: {x: 0, y: 0}
@@ -1227,6 +1248,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1297,8 +1319,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
-  image: {fileID: 4201149867205815373}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 4201149867205815373}
 --- !u!114 &5990303393027372426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,6 +1345,7 @@ MonoBehaviour:
   isOnlyForPortrait: 0
   space: {x: 0, y: 0}
   align: 0
+  target: {fileID: 0}
   _scaleType: 0
   ratio: 0.5
   _offsetMin: {x: 0, y: 0}
@@ -1378,8 +1403,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: IMAGE_BTN_COMMON
-  image: {fileID: 3313906446792365438}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 3313906446792365438}
 --- !u!114 &6799097319512619002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1406,6 +1433,8 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 4640050406803121049}
   target2: {fileID: 0}
+  width: 1
+  height: 1
   sideType: 0
   _offsetMin: {x: 0, y: 0}
   _offsetMax: {x: 0, y: 0}
@@ -1560,9 +1589,13 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
   imageBg: {fileID: 7919700463218471226}
   imageIcon: {fileID: 6323263804454997178}
   textTitle: {fileID: 1013985937348191354}
+  isFitImageSize: 1
   _type: 2
 --- !u!1 &8994604864063625099
 GameObject:
@@ -1624,6 +1657,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

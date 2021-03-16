@@ -39,7 +39,7 @@ public class UIMoreAppController : UIView, ITableViewDataSource
         listItem = new List<object>();
         //bg
        // TextureUtil.UpdateRawImageTexture(imageBg, AppRes.IMAGE_MOREAPP_BG, true);
-        StartParse();
+     
         LoadPrefab();
         heightCell = 512;
 
@@ -76,6 +76,7 @@ public class UIMoreAppController : UIView, ITableViewDataSource
     // Use this for initialization
     void Start()
     {
+           StartParse();
         LayOut();
     }
 
@@ -109,16 +110,7 @@ public class UIMoreAppController : UIView, ITableViewDataSource
 
     public override void LayOut()
     {
-        Vector2 sizeCanvas = AppSceneBase.main.sizeCanvas;
-        {
-            RectTransform rectTransform = imageBg.GetComponent<RectTransform>();
-            float w_image = rectTransform.rect.width;
-            float h_image = rectTransform.rect.height;
-            float scale = Common.GetMaxFitScale(w_image, h_image, sizeCanvas.x, sizeCanvas.y);
-            imageBg.transform.localScale = new Vector3(scale, scale, 1.0f);
-            //屏幕坐标 现在在屏幕中央
-            imageBg.transform.position = new Vector2(Screen.width / 2, Screen.height / 2);
-        }
+        base.LayOut();
 
     }
     public void OnClickBtnBack()
@@ -272,18 +264,21 @@ public class UIMoreAppController : UIView, ITableViewDataSource
     #region  Parse
     void StartParse()
     {
-        //Debug.Log("MoreApp StartParse 0");
+        Debug.Log("MoreAppParser StartParse 0");
         moreAppParser = new MoreAppParser();
         //Debug.Log("MoreApp StartParse 1");
         moreAppParser.callback = OnMoreAppParserFinished;
-        //Debug.Log("MoreApp StartParse 2");
+       
         string url = APPCENTER_HTTP_URL_HOME_KIDS_GAME;
         if (!Config.main.APP_FOR_KIDS)
         {
             url = APPCENTER_HTTP_URL_HOME_SMALL_GAME;
         }
+
+        // url = "http://www.mooncore.cn/moonma/adconfig/kidsgame/pintu/animal/ad_config_ios.json";
+         Debug.Log("MoreAppParser StartParse 2");
         moreAppParser.startParserAppList(url);
-        // Debug.Log("MoreApp StartParse 3");
+        Debug.Log("MoreAppParser StartParse 3");
     }
 
     void OnMoreAppParserFinished(MoreAppParser parser, List<ItemInfo> listApp)

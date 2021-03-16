@@ -8,6 +8,14 @@ using Moonma.AdKit.AdVideo;
 using Moonma.AdKit.AdConfig;
 using Moonma.AdKit.AdNative;
 
+/*
+admob ios sdk
+https://developers.google.com/admob/ios/quick-start
+
+https://developers.google.com/admob/ios/download
+
+*/
+
 public delegate void OnAdKitFinishDelegate(AdKitCommon.AdType type, AdKitCommon.AdStatus status, string str);
 public class AdKitCommon : MonoBehaviour
 {

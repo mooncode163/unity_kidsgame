@@ -44,10 +44,10 @@ public class NaviViewController : UIViewController
             rootController.LayOutView();
         }
     }
-   public override void UpdateLanguage()
+    public override void UpdateLanguage()
     {
         base.UpdateLanguage();
-        if(uiNaviBar!=null)
+        if (uiNaviBar != null)
         {
             uiNaviBar.UpdateLanguage();
         }
@@ -138,6 +138,29 @@ public class NaviViewController : UIViewController
         UpdateController();
 
     }
+
+    // 替换最后一个
+    public void Replace(UIViewController controller)
+    {
+        if (listController == null)
+        {
+            listController = new List<UIViewController>();
+        }
+        if (controller == null)
+        {
+            return;
+        }
+        if (listController.Count >= 1)
+        {
+            listController.RemoveAt(listController.Count - 1);
+        }
+        listController.Add(controller);
+        controller.type = UIViewController.Type.NAVIBAR;
+        controller.naviController = this;
+        UpdateController();
+
+    }
+
     public void Pop()
     {
         if (listController.Count == 0)

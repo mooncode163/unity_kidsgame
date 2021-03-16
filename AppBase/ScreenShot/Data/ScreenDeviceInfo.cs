@@ -53,8 +53,7 @@ public class ScreenDeviceInfo
     public const string DEVICE_NAME_WEIBO = "weibo";
 
     //ad
-    public const string DEVICE_NAME_AD = "ad";
-
+    public const string DEVICE_NAME_AD = "ad"; 
     //icon
     public const string DEVICE_NAME_ICON = "icon";
     public const int SCREEN_WIDTH_ICON = 1024;
@@ -145,6 +144,7 @@ public class ScreenDeviceInfo
 
             CreateDevice(DEVICE_NAME_AD, 1080, 480, false, true);
 
+            CreateDevice(DEVICE_NAME_AD, 1920, 1080, false, true);
 
         }
 

@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using LitJson;
+
+/*
+google play apk 下载：
+https://apkpure.com/cn/region-free-apk-download
+
+*/
+
 public class AppVersionGP : AppVersionBase
 {
     public override void StartParseVersion()

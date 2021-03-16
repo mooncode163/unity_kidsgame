@@ -82,7 +82,7 @@ public class HttpRequest
     }
     void OnRequestFinished(HTTPRequest req, HTTPResponse response)
     {
-        // Debug.Log("HttpRequest OnRequestFinished 1");
+        Debug.Log("HttpRequest OnRequestFinished 1");
         if (response == null)
         {
             if (this.Callback != null)

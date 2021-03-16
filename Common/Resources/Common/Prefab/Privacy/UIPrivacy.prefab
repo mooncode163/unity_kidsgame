@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4184249045876079937}
   - component: {fileID: 4035264453708712269}
   - component: {fileID: 6476800275433756511}
-  - component: {fileID: 4737801403405078881}
   - component: {fileID: 3218186958712246730}
   m_Layer: 0
   m_Name: LayoutBtn
@@ -59,6 +58,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -85,6 +85,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -116,6 +117,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 1
@@ -131,40 +133,6 @@ MonoBehaviour:
   childScaleWidth: 0
   row: 1
   col: 1
---- !u!114 &4737801403405078881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143482420674458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf7616aa7338b034f93c33c4cba278b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dispLayVertical: 0
-  dispLayHorizontal: 0
-  enableLayout: 1
-  enableHide: 1
-  enableOffsetAdBanner: 0
-  enableOffsetScreen: 0
-  isOnlyForLandscape: 0
-  isOnlyForPortrait: 1
-  space: {x: 0, y: 0}
-  align: 4
-  ratioW: 1
-  ratioH: 1
-  target: {fileID: 0}
-  target2: {fileID: 0}
-  width: 1
-  height: 320
-  sideType: 0
-  _offsetMin: {x: 0, y: 0}
-  _offsetMax: {x: 0, y: 0}
-  _typeX: 1
-  _typeY: 9
-  _typeWidthHeightScale: 0
 --- !u!114 &3218186958712246730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,9 +149,10 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 1
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
-  isOnlyForLandscape: 1
+  isOnlyForLandscape: 0
   isOnlyForPortrait: 0
   space: {x: 0, y: 0}
   align: 4
@@ -191,9 +160,11 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 0}
   target2: {fileID: 0}
-  width: 1
-  height: 160
+  widthH: 1
+  heightH: 160
   sideType: 0
+  _width: 1
+  _height: 320
   _offsetMin: {x: 0, y: 0}
   _offsetMax: {x: 0, y: 0}
   _typeX: 1
@@ -271,7 +242,9 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
   keyImageH: 
+  keyImageH2: 
   onOpen:
     m_PersistentCalls:
       m_Calls: []
@@ -376,9 +349,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
-  keyImageH: 
-  image: {fileID: 474725347479852548}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 474725347479852548}
 --- !u!114 &2726948817153440084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +369,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -603,7 +578,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6605261206816307799}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.01
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -661,7 +636,9 @@ MonoBehaviour:
   keyText: 
   keyColor: LevelTitle
   keyImage: 
+  keyImage2: 
   keyImageH: 
+  keyImageH2: 
   scrollRect: {fileID: 1480737230612901379}
   objScrollContent: {fileID: 4769542424213495605}
   textContent: {fileID: 4794253457179935724}
@@ -681,6 +658,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -691,9 +669,11 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 2457100024887836019}
   target2: {fileID: 1143482420674458}
-  width: 1
-  height: 1
+  widthH: 1
+  heightH: 1
   sideType: 3
+  _width: 1
+  _height: 1
   _offsetMin: {x: 32, y: 16}
   _offsetMax: {x: 32, y: 16}
   _typeX: 1
@@ -1061,7 +1041,9 @@ MonoBehaviour:
   keyText: STR_Privacy_Title
   keyColor: LevelTitle
   keyImage: 
+  keyImage2: 
   keyImageH: 
+  keyImageH2: 
   title: {fileID: 1138011921950302156}
   isFitFontWidth: 0
   offsetW: 0
@@ -1082,6 +1064,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -1092,9 +1075,11 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 0}
   target2: {fileID: 0}
-  width: 1
-  height: 1
+  widthH: 1
+  heightH: 1
   sideType: 0
+  _width: 1
+  _height: 1
   _offsetMin: {x: 40, y: 0}
   _offsetMax: {x: 40, y: 0}
   _typeX: 1
@@ -1150,9 +1135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyText: STR_Privacy_Yes
-  keyColor: 
+  keyColor: LevelTitle
   keyImage: 
+  keyImage2: 
   keyImageH: 
+  keyImageH2: 
   title: {fileID: 3537955752328019883}
   isFitFontWidth: 1
   offsetW: 64
@@ -1212,6 +1199,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -1222,9 +1210,11 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 0}
   target2: {fileID: 0}
-  width: 1
-  height: 1
+  widthH: 1
+  heightH: 1
   sideType: 0
+  _width: 1
+  _height: 1
   _offsetMin: {x: 0, y: 0}
   _offsetMax: {x: 0, y: 0}
   _typeX: 1
@@ -1246,6 +1236,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -1404,7 +1395,9 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
   keyImageH: 
+  keyImageH2: 
   imageBg: {fileID: 6399462031330067316}
   imageIcon: {fileID: 4540917405282324921}
   textTitle: {fileID: 7648162550060279699}
@@ -1464,9 +1457,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: SettingCellBgOringe
-  keyImageH: 
-  image: {fileID: 1887293386900932644}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 1887293386900932644}
 --- !u!114 &2654933434971361094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,6 +1477,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -1493,9 +1488,11 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 0}
   target2: {fileID: 0}
-  width: 1
-  height: 1
+  widthH: 1
+  heightH: 1
   sideType: 0
+  _width: 1
+  _height: 1
   _offsetMin: {x: 16, y: 8}
   _offsetMax: {x: 16, y: 8}
   _typeX: 1
@@ -1566,7 +1563,9 @@ MonoBehaviour:
   keyText: STR_Privacy_No
   keyColor: 
   keyImage: 
+  keyImage2: 
   keyImageH: 
+  keyImageH2: 
   title: {fileID: 554300403557855064}
   isFitFontWidth: 1
   offsetW: 64
@@ -2192,9 +2191,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: SettingCellBgOringe
-  keyImageH: 
-  image: {fileID: 4231987892826970762}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 4231987892826970762}
 --- !u!114 &5151627242524643182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2211,6 +2211,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -2221,9 +2222,11 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 0}
   target2: {fileID: 0}
-  width: 1
-  height: 1
+  widthH: 1
+  heightH: 1
   sideType: 0
+  _width: 1
+  _height: 1
   _offsetMin: {x: 16, y: 8}
   _offsetMax: {x: 16, y: 8}
   _typeX: 1
@@ -2355,9 +2358,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: SettingCellBgBlue
-  keyImageH: 
-  image: {fileID: 9044111520023680239}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 9044111520023680239}
 --- !u!1 &6719865121472266510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,9 +2414,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: BtnCommon
-  keyImageH: 
-  image: {fileID: 3839845533603342657}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 3839845533603342657}
 --- !u!1 &7279754368867413448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,9 +2471,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
-  keyImageH: 
-  image: {fileID: 2398512407572388858}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 2398512407572388858}
 --- !u!114 &3173608502666388024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2485,6 +2491,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -2848,9 +2855,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: BtnCommon
-  keyImageH: 
-  image: {fileID: 2333505223356492060}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 2333505223356492060}
 --- !u!1 &8897266726513276927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,7 +3007,9 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
   keyImageH: 
+  keyImageH2: 
   imageBg: {fileID: 5371123763888506101}
   imageIcon: {fileID: 1010764722091657165}
   textTitle: {fileID: 3644357958450526973}

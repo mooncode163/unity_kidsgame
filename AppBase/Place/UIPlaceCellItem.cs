@@ -16,6 +16,25 @@ public class UIPlaceCellItem : UICellItemBase
         textTitle.gameObject.SetActive(false);
         TextureUtil.UpdateImageTexture(imageBg.image, info.pic, true);
         imageIcon.gameObject.SetActive(info.isAd);
+        if(Common.noad)
+        {
+            imageIcon.gameObject.SetActive(false);
+        }
+        if(info.isAd)
+        {
+    if (Config.main.isNoIDFASDK && Common.isiOS)
+        {
+            imageIcon.gameObject.SetActive(!GameManager.main.isHaveUnlockLevel);
+        }
+        }
+      
+        if ((Config.main.isNoIDFASDK && Common.isiOS) && (!GameManager.main.isHaveUnlockLevel))
+        { 
+            imageIcon.UpdateImageByKey("icon_lock");
+        }else{
+            imageIcon.UpdateImageByKey("BtnIconVideo");
+        }
+//  imageIcon.UpdateImageByKey("icon_lock");
         LayOut();
     }
     public override bool IsLock()

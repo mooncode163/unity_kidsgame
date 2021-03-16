@@ -30,8 +30,14 @@ public class HomeViewController : UIViewController
     {
         string strPrefab = "AppCommon/Prefab/Home/" + GetPrefabName();
         string strPrefabDefault = "Common/Prefab/Home/UIHomeDefault";
-        GameObject obj = PrefabCache.main.Load(strPrefab);
+        string key = GetPrefabName();
+        Debug.Log("home key ="+key);
+        GameObject obj = PrefabCache.main.LoadByKey(key);
         if (obj == null)
+        {
+            obj = PrefabCache.main.Load(strPrefab);
+        }
+         if (obj == null)
         {
             obj = PrefabCache.main.Load(strPrefabDefault);
         }
@@ -122,7 +128,10 @@ public class HomeViewController : UIViewController
         UIViewController.ClonePrefabRectTransform(uiHomePrefab.gameObject, uiHome.gameObject);
         uiHome.Init();
 
-        GameManager.main.ShowPrivacy();
+        if (runCount == 0)
+        {
+            GameManager.main.ShowPrivacy();
+        }
     }
 
 

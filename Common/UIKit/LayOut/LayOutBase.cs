@@ -40,6 +40,9 @@ public class LayOutBase : MonoBehaviour
     public bool enableLayout = true;
     public bool enableHide = true;//是否过虑Hide
 
+    // 选择横屏配置参数
+    public bool enableLandscape = false;
+
     public bool enableOffsetAdBanner = false;
     public bool enableOffsetScreen = false;//全面屏 四周的偏移
     public bool isOnlyForLandscape = false;
@@ -55,6 +58,15 @@ public class LayOutBase : MonoBehaviour
     public virtual void LayOut()
     {
 
+    }
+    public bool IsUseLandscape()
+    {
+            bool ret = false;
+        if (Device.isLandscape&&enableLandscape)
+        {
+            ret = true;
+        }
+        return ret;
     }
 
     public bool Enable()

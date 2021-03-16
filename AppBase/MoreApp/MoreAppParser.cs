@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
-using System.Collections.Generic;
+using System.IO; 
 using System.Text;
 using LitJson;
 using UnityEngine;
+using BestHTTP;
+using System;
 
 public delegate void OnMoreAppParserFinishedDelegate(MoreAppParser parser, List<ItemInfo> listApp);
 
@@ -12,6 +13,7 @@ public class MoreAppParser
 {
     HttpRequest httpRequest;
     List<ItemInfo> listApp;
+       HTTPRequest reqHttp ;
     public OnMoreAppParserFinishedDelegate callback { get; set; }
 
 
@@ -27,9 +29,17 @@ public class MoreAppParser
 
     public void startParserAppList(string url)
     {
+           Debug.Log("MoreAppParser startParserAppList 0");
         listApp = new List<ItemInfo>();
-        HttpRequest http = new HttpRequest(OnHttpRequestFinished);
-        http.Get(url);
+        // HttpRequest http = new HttpRequest(OnHttpRequestFinished);
+        // http.Get(url);
+   Debug.Log("MoreAppParser startParserAppList 1");
+          reqHttp = new HTTPRequest(new Uri(url), HTTPMethods.Get, OnRequestFinished);
+           Debug.Log("MoreAppParser startParserAppList 2");
+        reqHttp.AddHeader("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25");
+       Debug.Log("MoreAppParser Send start");
+        reqHttp.Send();
+      Debug.Log("MoreAppParser Send end");
     }
 
     static public void parserJson(byte[] data, List<ItemInfo> list)
@@ -38,6 +48,7 @@ public class MoreAppParser
         JsonData root = JsonMapper.ToObject(str);
         JsonData appList = root["app"];
         string key = "";
+        Debug.Log("MoreAppParser appList.Count=" + appList.Count);
         for (int i = 0; i < appList.Count; i++)
 
         {
@@ -108,9 +119,24 @@ public class MoreAppParser
 
     }
 
+  void OnRequestFinished(HTTPRequest req, HTTPResponse response)
+  {
+      bool isSuccess = response.IsSuccess;
+         Debug.Log("MoreAppParser OnRequestFinished isSuccess=" + isSuccess);
+        if (isSuccess)
+        {
+            parserAppList(response.Data);
+
+        }
+        else
+        {
+
+        }
+  }
     void OnHttpRequestFinished(HttpRequest req, bool isSuccess, byte[] data)
     {
-        // Debug.Log("MoreAppParser OnHttpRequestFinished"); 
+        
+        Debug.Log("MoreAppParser OnHttpRequestFinished isSuccess=" + isSuccess);
         if (isSuccess)
         {
             parserAppList(data);

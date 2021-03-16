@@ -54,6 +54,9 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
   btnBack: {fileID: 7081473861706473065}
   textTitle: {fileID: 267194507250994692}
   tableView: {fileID: 114466820244400886}
@@ -266,6 +269,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -352,6 +356,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -501,6 +506,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -675,6 +681,9 @@ MonoBehaviour:
   keyText: STR_PLACE
   keyColor: LevelTitle
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
   title: {fileID: 5997222533519445884}
   isFitFontWidth: 1
   offsetW: 64
@@ -739,6 +748,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -812,6 +822,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -882,8 +893,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
-  image: {fileID: 8157973409418076332}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 8157973409418076332}
 --- !u!114 &204710839363349953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,6 +919,7 @@ MonoBehaviour:
   isOnlyForPortrait: 0
   space: {x: 0, y: 0}
   align: 0
+  target: {fileID: 0}
   _scaleType: 0
   ratio: 0.5
   _offsetMin: {x: 0, y: 0}
@@ -962,6 +976,9 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
   title: {fileID: 0}
   isFitFontWidth: 0
   offsetW: 0
@@ -1026,6 +1043,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1103,6 +1121,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1176,6 +1195,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1242,8 +1262,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: PlaceBg
+  keyImage2: V_PlaceBg
+  keyImageH: 
+  keyImageH2: H_PlaceBg
   image: {fileID: 6335607897698788944}
-  keyImage2: 
 --- !u!114 &8327644043282392599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,6 +1288,7 @@ MonoBehaviour:
   isOnlyForPortrait: 0
   space: {x: 0, y: 0}
   align: 4
+  target: {fileID: 0}
   _scaleType: 2
   ratio: 1
   _offsetMin: {x: 0, y: 0}
@@ -1330,6 +1353,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1491,9 +1515,13 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
   imageBg: {fileID: 9205532756139212883}
   imageIcon: {fileID: 6266969194795406486}
   textTitle: {fileID: 43678234867154640}
+  isFitImageSize: 1
   _type: 2
 --- !u!1 &8983125783950562877
 GameObject:
@@ -1548,8 +1576,10 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: IMAGE_BTN_COMMON
-  image: {fileID: 2918192098611244779}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 2918192098611244779}
 --- !u!114 &8305468457911716815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,6 +1606,8 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 307483307481741391}
   target2: {fileID: 0}
+  width: 1
+  height: 1
   sideType: 0
   _offsetMin: {x: 0, y: 0}
   _offsetMax: {x: 0, y: 0}
@@ -1634,5 +1666,7 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
-  image: {fileID: 8864041446877053340}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  image: {fileID: 8864041446877053340}

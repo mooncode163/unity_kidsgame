@@ -68,9 +68,13 @@ public class ImageRes
         filepath = Common.RES_CONFIG_DATA_COMMON + "/Image/ImageRes.json";
         if (FileUtil.FileIsExist(filepath))
         {
+             Debug.Log("imageResCommon file  exist");
             imageResCommon = new ImageResInternal();
             imageResCommon.isOldVersion = true;
             imageResCommon.Init(filepath);
+        }else
+        {
+            Debug.Log("imageResCommon file is not exist");
         }
 
         filepath = Common.RES_CONFIG_DATA + "/Image/ImageResAppCommon.json";
@@ -198,6 +202,60 @@ public class ImageRes
 
         return ret;
     }
+
+
+     public bool IsContainsKey(string key)
+    {
+        bool ret = false;
+        if (imageResApp.IsHasKey(key))
+        {
+            ret = true;
+        }
+        else
+        {
+            if (imageResAppCommon != null)
+            {
+                ret = imageResAppCommon.IsHasKey(key);
+            }
+            else
+            {
+                if (imageResCommon != null)
+                {
+                    ret = imageResCommon.IsHasKey(key);
+                }
+            }
+        }
+
+        //old
+        if (ret == false)
+        {
+            if (imageResOld != null)
+            {
+                ret = imageResOld.IsHasKey(key);
+                Debug.Log("imageResOld IsHasBoard key=" + key + " ret=" + ret);
+            }
+
+
+            if (!ret)
+            {
+                if (imageResCommon != null)
+                {
+                    ret = imageResCommon.IsHasKey(key);
+                }
+            }
+
+        }
+        if (ret == false)
+        {
+            if (imageResDefault != null)
+            {
+                ret = imageResDefault.IsHasKey(key);
+            }
+        }
+  
+        return ret;
+    }
+
     public string GetImage(string key)
     {
         string ret = "";

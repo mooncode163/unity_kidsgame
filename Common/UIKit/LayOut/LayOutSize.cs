@@ -16,10 +16,70 @@ public class LayOutSize : LayOutBase
     public float ratioH = 1f;//高
     public GameObject target;
     public GameObject target2;
-    public float width = 1f;//宽
-    public float height = 1f;//宽
+    // public float width = 1f;//宽
+    // public float height = 1f;//宽
+
+    // 横屏参数
+    public float widthH = 1f;//宽
+    public float heightH = 1f;//宽
 
     public SideType sideType;
+
+    public float _width= 1f;
+ public float width
+    {
+        get
+        {
+
+            if (IsUseLandscape())
+            {
+               return widthH;
+            }
+
+            return _width;
+        }
+
+        set
+        {
+            
+             if (IsUseLandscape())
+            {
+                widthH = value;
+            }else{
+                _width = value;
+            }
+            LayOut();
+        }
+
+    }
+
+        public float _height= 1f;
+ public float height
+    {
+        get
+        {
+
+            if (IsUseLandscape())
+            {
+               return heightH;
+            }
+
+            return _height;
+        }
+
+        set
+        {
+            
+             if (IsUseLandscape())
+            {
+                heightH = value;
+            }else{
+                _height = value;
+            }
+            LayOut();
+        }
+
+    }
 
     //左下角偏移量 单位为canvas
     public Vector2 _offsetMin;
@@ -135,6 +195,9 @@ public class LayOutSize : LayOutBase
 
         // 和widht height同步
         MATCH_VALUE,
+
+         // 和widht height同步 canvas大小
+        MATCH_VALUE_Canvas,
     }
 
     public enum TypeWidthHeightScale// 保持 w=h
@@ -201,7 +264,16 @@ public class LayOutSize : LayOutBase
                     x = rctran.anchoredPosition.x;
                 }
                 break;
-
+           case Type.MATCH_VALUE_Canvas:
+                {
+                    w = width;
+                     if (IsSprite())
+                    {
+                        w= Common.CanvasToWorldWidth(AppSceneBase.main.mainCamera, AppSceneBase.main.sizeCanvas, width);
+                    }
+                   x = rctran.anchoredPosition.x;
+                }
+                break;
             case Type.MATCH_PARENT:
                 {
                     w = w_parent * ratioW;
@@ -270,6 +342,17 @@ public class LayOutSize : LayOutBase
                     y = rctran.anchoredPosition.y;
                 }
                 break;
+           case Type.MATCH_VALUE_Canvas:
+                {
+                    h = height;
+                     if (IsSprite())
+                    {
+                    h= Common.CanvasToWorldHeight(AppSceneBase.main.mainCamera, AppSceneBase.main.sizeCanvas, height);
+                    }
+                    y = rctran.anchoredPosition.y;
+                }
+                break;
+                
             case Type.MATCH_PARENT:
                 {
                     h = h_parent * ratioH;

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIImage : UIView
 {
     public Image image;
-    public string keyImage2;
+
 
 
 
@@ -22,6 +22,21 @@ public class UIImage : UIView
             if (!Common.BlankString(keyImageH))
             {
                 keyPic = keyImageH;
+            }
+        }
+
+        string pic = ImageRes.main.GetImage(keyPic);
+
+        if (!FileUtil.FileIsExist(pic))
+        {
+
+            if (Device.isLandscape)
+            {
+                keyPic = keyImageH2;
+            }
+            else
+            {
+                keyPic = keyImage2;
             }
         }
         UpdateImageByKey(keyPic);
@@ -46,7 +61,7 @@ public class UIImage : UIView
         }
     }
 
-// 绝对路径
+    // 绝对路径
     public void UpdateImage(string pic, string key = "")
     {
         string strKey = key;

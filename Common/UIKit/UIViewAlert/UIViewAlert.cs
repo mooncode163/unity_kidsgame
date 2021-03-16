@@ -19,7 +19,7 @@ public class UIViewAlert : UIViewPop
 
     /// Awake is called when the script instance is being loaded.
     /// </summary>
-    protected override void Awake()
+    public  void Awake()
     {
         base.Awake();
         {
@@ -45,7 +45,7 @@ public class UIViewAlert : UIViewPop
         }
     }
     // Use this for initialization
-    protected override void Start()
+    public  void Start()
     {
         base.Start();
         LayOut();

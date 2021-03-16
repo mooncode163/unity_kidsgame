@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using LitJson;
+
+/*
+My app does not include third-party analytics.
+My app does not  include third-party advertising.
+My app does not share and collect any data. 
+*/
 public class AppVersionAppstore : AppVersionBase
 {
     public override void StartParseVersion()

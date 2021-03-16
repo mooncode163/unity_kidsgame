@@ -25,7 +25,9 @@ namespace BestHTTP.Logger
             FormatErr = "Err [{0}]: {1}";
             FormatEx = "Ex [{0}]: {1} - Message: {2}  StackTrace: {3}";
 
-            Level = UnityEngine.Debug.isDebugBuild ? Loglevels.Warning : Loglevels.Error;
+            //@moon 下面的会导致http 出错 关闭
+            //  Level = UnityEngine.Debug.isDebugBuild ? Loglevels.Warning : Loglevels.Error;
+            //@moon
         }
 
         public void Verbose(string division, string verb)

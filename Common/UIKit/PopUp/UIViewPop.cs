@@ -13,16 +13,18 @@ public class UIViewPop : UIView
 
     private Animator animator;
 
-    protected virtual void Awake()
+    public void Awake()
     {
+        base.Awake();
         animator = GetComponent<Animator>();
     }
 
     /// <summary>
     /// Unity's Start method.
     /// </summary>
-    protected virtual void Start()
+    public void Start()
     {
+        base.Start();
         AudioPlay.main.PlayFile(AppRes.Audio_PopupOpen);
         if (onOpen != null)
         {

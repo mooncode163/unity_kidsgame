@@ -61,6 +61,21 @@ public class GameManager
 
     }
 
+    // 是否已经解锁
+    public bool isHaveUnlockLevel
+    {
+        get
+        {
+            string key = "key_HaveUnlockLevel";
+            return Common.Int2Bool(PlayerPrefs.GetInt(key, 0));
+        }
+        set
+        {
+            string key = "key_HaveUnlockLevel";
+            PlayerPrefs.SetInt(key, Common.Bool2Int(value));
+
+        }
+    }
 
     public void GotoGame(UIViewController fromController)
     {
@@ -102,10 +117,10 @@ public class GameManager
 
     }
 
- 
+
     public void ShowPrivacy()
     {
-         if ( GameManager.main.isLoadGameScreenShot)
+        if (GameManager.main.isLoadGameScreenShot)
         {
             return;
         }

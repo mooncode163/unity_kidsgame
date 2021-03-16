@@ -4,6 +4,18 @@ using System.Text;
 using LitJson;
 using UnityEngine;
 
+/* 
+渲染顺序
+基本规则
+按照如下规则依次来确定渲染排序
+（先渲染的会被后渲染的覆盖。仅当前一个条件相同时，才会比较下一个条件。）
+
+物体的 SortingLayer。根据 Project Setting - Tags & Layers 中的顺序，越靠上的 SortingLayer 越先渲染。
+物体的 OrderInLayer。数字越小越先渲染。
+物体距离摄像机的距离。越远的越先渲染。在 2D 游戏中（默认设置下摄像机朝向 z 轴正方向时），这通常等价于 z 坐标，越大的越先渲染。
+ 
+链接：https://juejin.cn/post/6844904121753927693 
+*/
 public class CameraUtil
 {
     private const float k_NearClip = 9.5f;//0.3f;

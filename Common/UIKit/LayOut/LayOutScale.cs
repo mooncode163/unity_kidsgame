@@ -61,6 +61,9 @@ public class LayOutScale : LayOutBase
         MAX,
         SCREEN_MAX,//按屏幕 最大化
         TARGET,//相对目标 
+
+        ByX,//相对父窗口的宽
+        ByY,//相对父窗口的高 
     }
 
     void Awake()
@@ -104,6 +107,12 @@ public class LayOutScale : LayOutBase
                 }
                 break;
             case Type.MAX:
+                {
+                    this.ScaleObj(this.gameObject, true);
+                }
+                break;
+                      case Type.ByX:
+                       case Type.ByY:
                 {
                     this.ScaleObj(this.gameObject, true);
                 }
@@ -218,6 +227,15 @@ public class LayOutScale : LayOutBase
             else
             {
                 scale = Common.GetBestFitScale(w, h, w_parent, h_parent) * ratio;
+            }
+            
+            if(scaleType==Type.ByX)
+            {
+                    scale = Common.GetBestFitScale(w, w, w_parent, w_parent) * ratio;
+            }
+             if(scaleType==Type.ByY)
+            {
+                    scale = Common.GetBestFitScale(h, h, h_parent, h_parent) * ratio;
             }
         }
 
