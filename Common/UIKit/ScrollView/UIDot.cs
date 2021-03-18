@@ -11,8 +11,7 @@ public class UIDot : UIView
 
     public const string IMAGE_DOT_UNSEL = "AppCommon/UI/UIKit/ScrollView/scroll_dot_unsel";
     public const string IMAGE_DOT_SEL = "AppCommon/UI/UIKit/ScrollView/scroll_dot_sel";
-    public Image image;
-    public int index;
+    public Image image; 
     public void UpdateItem(bool isSel)
     {
         TextureUtil.UpdateImageTexture(image, isSel ? IMAGE_DOT_SEL : IMAGE_DOT_UNSEL, false);

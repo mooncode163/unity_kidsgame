@@ -38,7 +38,7 @@ public class UIGameWinBase : UIViewPop
     /// <summary>
     /// Unity's Awake method.
     /// </summary>
-    protected override void Awake()
+    protected void Awake()
     {
         base.Awake();
 
@@ -47,7 +47,7 @@ public class UIGameWinBase : UIViewPop
     /// <summary>
     /// Unity's Start method.
     /// </summary>
-    protected override void Start()
+    protected void Start()
     {
         base.Start();
         LayOut();

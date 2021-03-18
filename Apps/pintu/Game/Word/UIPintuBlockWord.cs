@@ -28,8 +28,7 @@ public class UIPintuBlockWord : UIView, IPointerUpHandler, IPointerDownHandler, 
     public Vector3 posCenter = Vector3.zero;
     public bool enableTouch = true;
     public int indexRow;
-    public int indexCol;
-    public int index;
+    public int indexCol; 
 
     public Vector3 posNormal;
     bool isTouchDown;

@@ -25,7 +25,7 @@ public class UIWordDetail : UIGameWinBase, ISegmentDelegate
     /// <summary>
     /// Unity's Awake method.
     /// </summary>
-    protected override void Awake()
+    public void Awake()
     {
         base.Awake();
         WordItemInfo info = GameLevelParse.main.GetItemInfo() as WordItemInfo;
@@ -44,7 +44,7 @@ public class UIWordDetail : UIGameWinBase, ISegmentDelegate
     /// <summary>
     /// Unity's Start method.
     /// </summary>
-    protected override void Start()
+    public void Start()
     {
         base.Start();
         UpdateSegment();

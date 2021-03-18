@@ -157,11 +157,11 @@ public class UISettingControllerBase : UIView, ITableViewDataSource
          {
              Debug.Log("UIViewAlert Open ");
 
-            //  popup.callbackClose = OnUILanguageDidClose;
+             //  popup.callbackClose = OnUILanguageDidClose;
 
          }, popup =>
          {
-                OnUILanguageDidClose();
+             OnUILanguageDidClose();
 
          });
 
@@ -242,7 +242,8 @@ public class UISettingControllerBase : UIView, ITableViewDataSource
             info.tag = (int)SettingItemTag.TAG_SETTING_NOAD;
             listItem.Add(info);
         }
-        if (Common.isiOS && Config.main.isHaveRemoveAd)
+        // if (Common.isiOS && Config.main.isHaveRemoveAd)
+         if (Common.isiOS)
         {
             ItemInfo info = new ItemInfo();
             info.title = Language.main.GetString("STR_BTN_RESTORE_NOAD");
@@ -512,7 +513,13 @@ public class UISettingControllerBase : UIView, ITableViewDataSource
         // string no = Language.main.GetString(AppString.STR_UIVIEWALERT_YES_SHOP_RESTORE_BUY);
         // viewAlert.SetText(title, msg, yes, no);
         // viewAlert.Show();
-        IAP.main.RestoreBuy(IAP.productIdNoAD);
+
+        string product = IAP.productIdNoAD;
+        if (Config.main.isNoIDFASDK && Common.isiOS)
+        {
+            product = Common.GetAppPackage() + "." + IAPConfig.main.GetIdByKey("unlocklevel");
+        }
+        IAP.main.RestoreBuy(product);
 
     }
 

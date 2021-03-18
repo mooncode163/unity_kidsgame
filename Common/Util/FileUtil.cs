@@ -502,6 +502,39 @@ public class FileUtil
 
     }
 
+    // 删除文件夹里面的内容 保留自己
+    static public void DeleteDirContent(string dir)
+    {
+        //判断文件夹是否还存在
+        if (!Directory.Exists(dir))
+        {
+            return;
+        }
+        //去除文件夹和子文件的只读属性
+        //去除文件夹的只读属性
+        System.IO.DirectoryInfo fileInfo = new DirectoryInfo(dir);
+        fileInfo.Attributes = FileAttributes.Normal & FileAttributes.Directory;
+
+        //去除文件的只读属性
+        System.IO.File.SetAttributes(dir, System.IO.FileAttributes.Normal);
+
+        foreach (string f in Directory.GetFileSystemEntries(dir))
+        {
+
+            if (File.Exists(f))
+            {
+                //如果有子文件删除文件
+                File.Delete(f);
+            }
+            else
+            {
+                //循环递归删除子文件夹
+                DeleteDir(f);
+            }
+
+        }
+    }
+
     static public void DeleteDir(string dir)
     {
 
@@ -654,7 +687,7 @@ public class FileUtil
     }
     static public void DeleteDir2(string dir)
     {
-           //判断文件夹是否还存在
+        //判断文件夹是否还存在
         if (!Directory.Exists(dir))
         {
             return;

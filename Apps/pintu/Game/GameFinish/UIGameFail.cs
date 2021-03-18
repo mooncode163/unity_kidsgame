@@ -15,7 +15,7 @@ public class UIGameFail : UIGameWinBase
     public Button btnRevive;//复活
     public Button btnRestart; //从第一关开始
 
-    protected override void Awake()
+    public void Awake()
     {
         base.Awake();
         // textDetail.color = new Color32(192, 90, 59, 255);
@@ -27,7 +27,7 @@ public class UIGameFail : UIGameWinBase
         LayOut();
     }
     // Use this for initialization
-    protected override void Start()
+    public void Start()
     {
         base.Start();
         if (!AppVersion.appCheckHasFinished)

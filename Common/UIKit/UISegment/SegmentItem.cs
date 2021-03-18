@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class SegmentItem : UIView
 {
     public Image imageSel;
-    public Text textTitle;
-    public int index;
+    public Text textTitle; 
     public Color colorSel = Color.red;
     public Color colorUnSel = Color.white;
 

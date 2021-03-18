@@ -98,6 +98,17 @@ public class PopUpManager : MonoBehaviour
 
     }
 
+
+    public void OnCloseAll()
+    {
+        foreach (GameObject ui in currentPanels)
+        {
+            Destroy(ui);
+        }
+        currentPanels.Clear();
+
+    }
+
     /// <summary>
     /// Closes the topmost popup.
     /// </summary>

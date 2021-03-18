@@ -9,8 +9,7 @@ public class UITabBarItem : UIView
     float animaeTime = 0.15f;//0.3
     private bool isActive = false;//true代表正在执行翻转，不许被打断
     public UIImage imageBg;
-    public UIText textTitle;
-    public int index;
+    public UIText textTitle; 
 
     public string keyColorSel;
 

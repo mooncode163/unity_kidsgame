@@ -32,7 +32,7 @@ public class UIGameWinWord : UIGameWinBase, ISegmentDelegate
     /// <summary>
     /// Unity's Awake method.
     /// </summary>
-    protected override void Awake()
+    public void Awake()
     {
         base.Awake();
         textPinyin.gameObject.SetActive(true);
@@ -43,7 +43,7 @@ public class UIGameWinWord : UIGameWinBase, ISegmentDelegate
     /// <summary>
     /// Unity's Start method.
     /// </summary>
-    protected override void Start()
+    public void Start()
     {
         base.Start();
         LayOut();

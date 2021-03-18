@@ -23,7 +23,7 @@ public class UILanguage : UIViewPop, ITableViewDataSource
     int heightCell;
     int totalItem;
     public OnUILanguageDidCloseDelegate callbackClose { get; set; }
-    protected override void Awake()
+    public void Awake()
     {
         base.Awake();
         heightCell = 160;
@@ -34,7 +34,7 @@ public class UILanguage : UIViewPop, ITableViewDataSource
     }
 
     // Use this for initialization
-    protected override void Start()
+    public void Start()
     {
         base.Start();
         listItem = new List<object>();

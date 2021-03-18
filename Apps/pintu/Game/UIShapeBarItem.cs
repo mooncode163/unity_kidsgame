@@ -9,8 +9,7 @@ using UnityEngine.UI;
 public delegate void OnUIShapeBarItemDidClickDelegate(UIShapeBarItem item);
 public class UIShapeBarItem : UIView//, ISysImageLibDelegate
 {
-    public RawImage imageItem;
-    public int index;
+    public RawImage imageItem; 
     public ItemInfo infoItem;
     public OnUIShapeBarItemDidClickDelegate callBackDidClick { get; set; }
     void Awake()

@@ -6,8 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UINetImageList : UIView, ITableViewDataSource, INetImageParseDelegate
-{
-    public int index;
+{ 
     public GameObject objLayoutBtn;
     public Button btnPlay;
     public Button btnNetImage;

@@ -317,6 +317,17 @@ public class AppSceneBase : ScriptBase
         LayoutChild();
     }
 
+    public void OnCloseAllPopView()
+    {
+
+        foreach (UIViewPop ui in listPopup )
+        {
+            ui.DoClose();
+        }
+        PopUpManager.main.OnCloseAll();
+        listPopup.Clear();
+    }
+
     public void LayoutChild()
     {
         if (imageBg != null)

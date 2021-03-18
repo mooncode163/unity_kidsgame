@@ -7,8 +7,7 @@ public class UICellItemBase : UIView
 {
     public GameObject objContent;
     public float width;
-    public float height;
-    public int index;
+    public float height; 
     public int totalItem;
     public int tagValue;
     bool isItemLock = false;
