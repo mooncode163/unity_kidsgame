@@ -104,7 +104,12 @@ public class UIPintuOption : UIView//, ISysImageLibDelegate
         UpdateSlider();
 
         LayOut();
-        OnUIDidFinish();
+
+        if(GameManager.main.isLoadGameScreenShot)
+        {
+            OnBtnClickPlay();
+        }
+        // OnUIDidFinish();
     }
 
     // Update is called once per frame
@@ -229,7 +234,7 @@ public class UIPintuOption : UIView//, ISysImageLibDelegate
         if (Common.isAndroid)
         {
             int w, h;
-            using (var javaClass = new AndroidJavaClass(SysImageLib.JAVA_CLASS))
+            // using (var javaClass = new AndroidJavaClass(SysImageLib.JAVA_CLASS))
             {
 
                 //安卓系统解码

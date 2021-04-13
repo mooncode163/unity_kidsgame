@@ -14,7 +14,8 @@ namespace Moonma.SysImageLib
     public class SysImageLib
     {
       //   public ISysImageLibDelegate iDelegate;
-        public const string JAVA_CLASS = "com.moonma.common.ImageUtil"; 
+     
+        
         static private SysImageLib _main = null;
         public static SysImageLib main
         {

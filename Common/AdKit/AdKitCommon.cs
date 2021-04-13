@@ -49,14 +49,14 @@ public class AdKitCommon : MonoBehaviour
         // return;
         Debug.Log("IPInfo GetIPInfo start");
         int ret = 0;
-         Debug.Log("IPInfo GetIPInfo   0");
+        Debug.Log("IPInfo GetIPInfo   0");
         await IPInfo.main.GetIpInfoAsync();
-         Debug.Log("IPInfo GetIPInfo   1");
+        Debug.Log("IPInfo GetIPInfo   1");
         if (IPInfo.main.IsHuaweiAppStoreCheck())
         {
             ret = INSERT_NOAD_DAY;
         }
-         Debug.Log("IPInfo GetIPInfo   2");
+        Debug.Log("IPInfo GetIPInfo   2");
         adinsertNoadDay = ret;
 
         Debug.Log("IPInfo GetIPInfo adinsertNoadDay =" + adinsertNoadDay);
@@ -141,6 +141,10 @@ public class AdKitCommon : MonoBehaviour
     {
         AdBanner.SetScreenOffset(0, (int)y);
     }
+    public void PreInit()
+    { 
+        GetIPInfo(); 
+    }
 
     public void InitAdInsert()
     {
@@ -148,7 +152,7 @@ public class AdKitCommon : MonoBehaviour
         {
             return;
         }
-        GetIPInfo();
+        
         if (Config.main.channel == Source.HUAWEI)
         {
             // 华为不能  应用频繁弹窗恶意广告
@@ -347,7 +351,7 @@ public class AdKitCommon : MonoBehaviour
         {
             callbackFinish(AdType.BANNER, AdStatus.SUCCESFULL, str);
         }
-        AppSceneBase.main.LayoutChild();
+        AppSceneBase.main.LayOut();
 
     }
     public void AdBannerDidReceiveAdFail(string adsource)

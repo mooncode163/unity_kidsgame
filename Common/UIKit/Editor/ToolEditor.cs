@@ -34,7 +34,13 @@ public class ToolEditor : Editor
 
     }
 
-   
+    [MenuItem(KEY_MENU_GameObject + "/CreateGameSampleCode", false, 4)] 
+    static void CreateGameSampleCode()
+    {
+        //弹出窗口
+        EditorWindow.GetWindow(typeof(UIEditorCreateGameSampleCode));
+    }
+
 
     [MenuItem(KEY_MENU_GameObject + "/MakeConfigPrefabImage", false, 4)]
     static public void MakeConfigPrefabAndImage()

@@ -34,34 +34,24 @@ public class ScreenShotConfig
             switch (idx)
             {
                 case 0:
-                    {
-                        int total = LevelManager.main.placeTotal;
-                        if (total > 1)
-                        {
-                            controller = PlaceViewController.main;
-                        }
-                        else
-                        {
-                            controller = LearnProgressViewController.main;
-                        }
-                    }
-
-                    break;
-                case 1:
-                    LevelManager.main.gameLevel = 1;
-                    controller = GameViewController.main;
-                    break;
-                case 2:
                     LevelManager.main.gameLevel = 2;
                     controller = GameViewController.main;
                     break;
-                case 3:
-                    controller = HomeViewController.main;
+                case 1:
+                    LevelManager.main.gameLevel = 4;
+                    controller = GameViewController.main;
                     break;
-                case 4:
-                    controller = GuankaViewController.main;
+                case 2:
+                    LevelManager.main.gameLevel = 8;
+                    controller = GameViewController.main;
                     break;
 
+                case 3:
+                    controller = GuankaViewController.main;
+                    break;
+                case 4:
+                    controller = HomeViewController.main;
+                    break;
 
                 default:
                     controller = HomeViewController.main;

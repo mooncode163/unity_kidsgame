@@ -186,8 +186,8 @@ public static class BuildiOSPlayer
             // AddLibToProject(pbxProj, unityFrameworkTargetGuid, "libxml2.tbd");
 
             // admob sdk 8.0 之前
-            AddFileToProject(projPath, pbxProj, targetGuid, "Libraries/AdmobBtnClose.png");
-            AddFileToProject(projPath, pbxProj, targetGuid, "Libraries/Plugins/iOS/UnifiedNativeAdView.xib");
+            // AddFileToProject(projPath, pbxProj, targetGuid, "Libraries/AdmobBtnClose.png");
+            // AddFileToProject(projPath, pbxProj, targetGuid, "Libraries/Plugins/iOS/UnifiedNativeAdView.xib");
         }
 #endif
 
@@ -228,7 +228,7 @@ public static class BuildiOSPlayer
         {
             if(!Config.main.isNoIDFASDK)
             {
-                AddFileToProject(projPath, pbxProj, targetGuid, "Frameworks/Plugins/iOS/ThirdParty/chsj/BUAdSDK.bundle");
+                // AddFileToProject(projPath, pbxProj, targetGuid, "Frameworks/Plugins/iOS/ThirdParty/chsj/BUAdSDK.bundle");
             }
             
         }

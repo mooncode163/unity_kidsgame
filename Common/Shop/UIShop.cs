@@ -194,7 +194,7 @@ public class UIShop : UIView, ITableViewDataSource
 
         tableView.dataSource = this;
         UpdateGold();
-        LayOutChild();
+        LayOut();
     }
 
     // Update is called once per frame
@@ -260,8 +260,9 @@ public class UIShop : UIView, ITableViewDataSource
 
 
     }
-    void LayOutChild()
+  public override  void LayOut()
     {
+        base.LayOut();
         Vector2 sizeCanvas = AppScene.main.sizeCanvas;
         {
             RectTransform rctran = imageBg.GetComponent<RectTransform>();

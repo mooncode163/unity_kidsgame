@@ -65,7 +65,7 @@ public class AppScene : AppSceneBase
         // AdKitCommon.main.InitAdBanner();
         bool isshow_adinsert = true;
 
-        AdKitCommon.main.InitAdInsert();
+        AdKitCommon.main.PreInit();
         //AdKitCommon.main.InitAdVideo();
 
         if (Common.isAndroid)

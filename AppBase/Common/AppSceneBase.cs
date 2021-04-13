@@ -38,8 +38,9 @@ public class AppSceneBase : ScriptBase
         {
             AppSceneBase.main = this;
         }
-        else{
-             Debug.Log("AppSceneBase main is not null");
+        else
+        {
+            Debug.Log("AppSceneBase main is not null");
             // return;
         }
         isReLayout = false;
@@ -115,7 +116,7 @@ public class AppSceneBase : ScriptBase
             isHasStarted = false;
             InitUiScaler();
             UpdateMainWorldRect(0);
-            //LayoutChild();
+            //LayOutChild();
             RunCheckApp();
 
             OnResize();
@@ -143,12 +144,16 @@ public class AppSceneBase : ScriptBase
         //InitScalerMatch 和 InitUiScaler 异步执行
         InitUiScaler();
         UpdateMainWorldRect(_adBannerHeightCanvas);
-        LayoutChild();
+        LayOut();
         if (rootViewController != null)
         {
             rootViewController.UpdateCanvasSize(sizeCanvas);
         }
         // Debug.Log("Device.isScreenDidChange:sizeCanvas = " + sizeCanvas);
+
+        // 延迟更新
+        LayOut();
+        Invoke("LayOut", 0.2f);
     }
 
     void OnAppVersionFinished(AppVersion app)
@@ -292,6 +297,22 @@ public class AppSceneBase : ScriptBase
         // Debug.Log("ClearMainWorld idx=" + idx);
     }
 
+
+    public void SetCanvasRenderMode(RenderMode mode)
+    {
+        canvasMain.renderMode = mode;
+        switch (mode)
+        {
+            case RenderMode.ScreenSpaceCamera:
+                // canvasMain.renderMode = RenderMode.ScreenSpaceCamera;
+                canvasMain.worldCamera = mainCamera;
+                break;
+
+        }
+
+    }
+
+
     public void UpdateMainWorldRect(float adBannerHeightCanvas)
     {
         float x, y, w, h;
@@ -314,21 +335,20 @@ public class AppSceneBase : ScriptBase
         float z = rctranWorld.position.z;
         rctranWorld.sizeDelta = new Vector2(w, h);
         rctranWorld.position = new Vector3(x, y, z);
-        LayoutChild();
+        LayOut();
     }
 
     public void OnCloseAllPopView()
     {
 
-        foreach (UIViewPop ui in listPopup )
+        foreach (UIViewPop ui in listPopup)
         {
             ui.DoClose();
         }
         PopUpManager.main.OnCloseAll();
         listPopup.Clear();
     }
-
-    public void LayoutChild()
+    public void LayOut()
     {
         if (imageBg != null)
         {
@@ -385,6 +405,15 @@ public class AppSceneBase : ScriptBase
                 ui.LayOut();
             }
         }
+
+        //layout world gameobject
+        foreach (LayOutBase ly in objMainWorld.GetComponentsInChildren<LayOutBase>(true))
+        {
+            if (ly)
+            {
+                ly.LayOut();
+            }
+        }
     }
     void OnHttpRequestFinished(HttpRequest req, bool isSuccess, byte[] data)
     {
@@ -402,14 +431,14 @@ public class AppSceneBase : ScriptBase
             TextureCache.main.AddCache(filepath, tex);
             SpriteRenderer render = objSpriteBg.GetComponent<SpriteRenderer>();
             render.sprite = TextureUtil.CreateSpriteFromTex(tex);
-            LayoutChild();
+            LayOut();
         }
 
     }
-    public void UpdateWorldBg(string pic,bool isByKey=false)
+    public void UpdateWorldBg(string pic, bool isByKey = false)
     {
         string picnew = pic;
-        if(isByKey)
+        if (isByKey)
         {
             picnew = ImageRes.main.GetImage(pic);
         }
@@ -493,7 +522,7 @@ public class AppSceneBase : ScriptBase
     public void OnAndroidGlobalLayout(string str)
     {
         Debug.Log("OnAndroidGlobalLayout::str=" + str);
-        LayoutChild();
+        LayOut();
     }
 
 

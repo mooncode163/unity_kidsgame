@@ -152,7 +152,7 @@ public class UINetImage : UIView, ITableViewDataSource, INetImageParseDelegate
             ImageItemInfo info = listItem[item.index] as ImageItemInfo;
             p.StartParseImageList(info);
 
-            OnShowAdVideo();
+            // OnShowAdVideo();
         }
 
     }

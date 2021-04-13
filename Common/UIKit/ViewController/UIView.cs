@@ -262,28 +262,41 @@ public class UIView : MonoBehaviour
         // Common.UnityStartUpFinish();
     }
 
-    public Vector2 GetBoundSize()
+    // 实际显示大小 包含缩放
+   public Vector2 GetBoundSize()
+    { 
+        return GetBoundSizeOfGameObject(this.gameObject);
+    }
+
+    // 实际显示大小 包含缩放
+   public Vector2 GetBoundSizeOfGameObject(GameObject obj)
     {
         Vector2 ret = Vector2.zero;
         Renderer rd = null;
-        UISprite uisp = this.gameObject.GetComponent<UISprite>();
+        UISprite uisp = obj.GetComponent<UISprite>();
         if (uisp != null)
         {
             rd = uisp.objSp.GetComponent<Renderer>();
         }
         if (rd == null)
         {
-            rd = this.gameObject.GetComponent<Renderer>();
+            rd = obj.GetComponent<Renderer>();
         }
 
         if (rd != null)
         {
             ret = rd.bounds.size;
+        }else{
+             RectTransform rctran = obj.GetComponent<RectTransform>();
+             if(rctran!=null)
+             {
+                 ret.x = rctran.rect.width*obj.transform.localScale.x;
+                 ret.y = rctran.rect.height*obj.transform.localScale.y;
+             }
         }
 
         return ret;
     }
-
      public void SetActive(bool isActive)
     {
         this.gameObject.SetActive(isActive);

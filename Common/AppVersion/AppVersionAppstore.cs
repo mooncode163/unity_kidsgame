@@ -8,6 +8,10 @@ using LitJson;
 My app does not include third-party analytics.
 My app does not  include third-party advertising.
 My app does not share and collect any data. 
+
+// app被拒原因
+https://appstoreconnect.apple.com/apps/1558641339/appstore/platform/ios/resolutioncenter?m=
+
 */
 public class AppVersionAppstore : AppVersionBase
 {

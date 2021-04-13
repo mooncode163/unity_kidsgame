@@ -130,6 +130,12 @@ public class UIEditorCreateGameSampleCode : EditorWindow
             string filepathnew = filepath.Replace("Sample", key);
             FileUtil.Rename(filepath, filepathnew);
         }
+
+              {
+            string filepath = Application.dataPath + "/Resources/AppCommon/Prefab/Game/UIGameSample.prefab";
+            string filepathnew = filepath.Replace("Sample", key);
+            FileUtil.Rename(filepath, filepathnew);
+        }
     }
 
 }

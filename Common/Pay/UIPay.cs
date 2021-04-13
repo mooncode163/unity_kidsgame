@@ -99,7 +99,7 @@ public class UIPay : UIView, ITableViewDataSource
         }
 
         tableView.dataSource = this;
-        // LayOutChild();
+         LayOut();
     }
 
     // Update is called once per frame
@@ -117,6 +117,7 @@ public class UIPay : UIView, ITableViewDataSource
 
     public override void LayOut()
     {
+        base.LayOut();
         Vector2 sizeCanvas = AppSceneBase.main.sizeCanvas;
         {
             RectTransform rctran = imageBg.GetComponent<RectTransform>();

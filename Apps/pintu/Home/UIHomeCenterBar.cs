@@ -133,6 +133,14 @@ public class UIHomeCenterBar : UIView
 
     public void OnClickBtnPhoto()
     {
+
+    if (this.controller != null)
+        {
+            NaviViewController navi = this.controller.naviController;
+            navi.Push(AdHomeViewController.main);
+        }
+        return ;
+
         SysImageLib.main.SetObjectInfo(this.gameObject.name, "OnSysImageLibDidOpenFinish");
         SysImageLib.main.OpenImage();
     }
@@ -177,7 +185,7 @@ public class UIHomeCenterBar : UIView
         if (Common.isAndroid)
         {
             int w, h;
-            using (var javaClass = new AndroidJavaClass(SysImageLib.JAVA_CLASS))
+            // using (var javaClass = new AndroidJavaClass(SysImageLib.JAVA_CLASS))
             {
 
                 //安卓系统解码

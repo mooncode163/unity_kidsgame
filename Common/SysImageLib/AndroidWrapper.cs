@@ -6,15 +6,14 @@ using System.Collections;
 namespace Moonma.SysImageLib
 {
 internal class AndroidWrapper : BasePlatformWrapper
-	{
-		public const string JAVA_CLASS = "com.moonma.common.ImageUtil"; 
-
-
+	{ 
+   // public const string JAVA_CLASS = "com.moonma.common.ImageUtil"; 
+    public const string JAVA_CLASS = "com.moonma.common.ImageSelectUnity"; 
 	  public override void SetObjectInfo(string objName, string objMethod)
         { 
             using(var javaClass = new AndroidJavaClass(JAVA_CLASS))
 				{
-					javaClass.CallStatic("SetObjectInfo",objName,objMethod);
+					javaClass.CallStatic("UnitySetObjectInfo",objName,objMethod);
 				}
         }
 
@@ -22,14 +21,14 @@ internal class AndroidWrapper : BasePlatformWrapper
         {
    				using(var javaClass = new AndroidJavaClass(JAVA_CLASS))
 				{
-					javaClass.CallStatic("OpenSystemImageLib");
+					javaClass.CallStatic("UnityOpenImage");
 				}
         }   
            public override void OpenCamera()
         {
    				using(var javaClass = new AndroidJavaClass(JAVA_CLASS))
 				{
-					javaClass.CallStatic("OpenSystemCameraApp");
+					javaClass.CallStatic("UnityOpenCamera");
 				}
         }  
 

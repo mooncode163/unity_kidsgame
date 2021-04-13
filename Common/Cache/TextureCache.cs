@@ -73,7 +73,7 @@ public class TextureCache
         return Load(ImageRes.main.GetImage(key));
     }
 
-    public Texture2D Load(string filepath)
+    public Texture2D Load(string filepath, bool isCache = true)
     {
         if (Common.isBlankString(filepath))
         {
@@ -81,11 +81,14 @@ public class TextureCache
         }
         Texture2D tex = null;
         string key = filepath;
-        if (dicItem.ContainsKey(key))
+        if (isCache)
         {
-            tex = dicItem[key];
+            if (dicItem.ContainsKey(key))
+            {
+                tex = dicItem[key];
+            }
         }
-        else
+        if (tex == null)
         {
             if (FileUtil.FileIsExistAsset(key))
             {
@@ -104,10 +107,13 @@ public class TextureCache
                 }
 
             }
-
-            if (tex != null)
+            if (isCache)
             {
-                dicItem.Add(key, tex);
+                if (tex != null)
+                {
+                    dicItem.Add(key, tex);
+                }
+
             }
 
         }

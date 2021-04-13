@@ -98,10 +98,14 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  index: 0
+  id: 
   objContent: {fileID: 1473312353076142}
   width: 0
   height: 0
-  index: 0
   totalItem: 0
   tagValue: 0
   textTitle: {fileID: 5557527798080464961}
@@ -247,6 +251,11 @@ MonoBehaviour:
   keyText: 
   keyColor: SettingTitle
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  index: 0
+  id: 
   title: {fileID: 1075602089311221801}
   isFitFontWidth: 0
   offsetW: 0
@@ -267,6 +276,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -277,7 +287,11 @@ MonoBehaviour:
   ratioH: 1
   target: {fileID: 0}
   target2: {fileID: 0}
+  widthH: 1
+  heightH: 1
   sideType: 0
+  _width: 1
+  _height: 1
   _offsetMin: {x: 32, y: 0}
   _offsetMax: {x: 32, y: 0}
   _typeX: 1
@@ -409,8 +423,12 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
-  image: {fileID: 3616844420376831547}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  index: 0
+  id: 
+  image: {fileID: 3616844420376831547}
 --- !u!1 &3618185236487394731
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,9 +578,15 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  index: 0
+  id: 
   imageBg: {fileID: 4839910712951596006}
   imageIcon: {fileID: 331608513103393044}
   textTitle: {fileID: 1921636377957729808}
+  isFitImageSize: 1
   _type: 3
 --- !u!114 &7445896483245711317
 MonoBehaviour:
@@ -580,6 +604,7 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
@@ -642,6 +667,11 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
+  keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  index: 0
+  id: 
   title: {fileID: 1162497679519857567}
   isFitFontWidth: 0
   offsetW: 0
@@ -771,9 +801,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyText: 
   keyColor: 
-  keyImage: IMAGE_BTN_SWITCH_SEL
+  keyImage: BtnSwitchSel
+  keyImage2: BtnSwitchUnsel
+  keyImageH: 
+  keyImageH2: 
+  index: 0
+  id: 
   image: {fileID: 7488862144309966832}
-  keyImage2: IMAGE_BTN_SWITCH_UNSEL
 --- !u!1 &6014762008810159734
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,8 +939,12 @@ MonoBehaviour:
   keyText: 
   keyColor: 
   keyImage: 
-  image: {fileID: 7921707095914978784}
   keyImage2: 
+  keyImageH: 
+  keyImageH2: 
+  index: 0
+  id: 
+  image: {fileID: 7921707095914978784}
 --- !u!114 &3664041512272805478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,12 +961,14 @@ MonoBehaviour:
   dispLayHorizontal: 0
   enableLayout: 1
   enableHide: 1
+  enableLandscape: 0
   enableOffsetAdBanner: 0
   enableOffsetScreen: 0
   isOnlyForLandscape: 0
   isOnlyForPortrait: 0
   space: {x: 0, y: 0}
   align: 0
+  target: {fileID: 0}
   _scaleType: 0
   ratio: 0.5
   _offsetMin: {x: 0, y: 0}

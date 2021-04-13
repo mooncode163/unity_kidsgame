@@ -81,7 +81,7 @@ public class UIHomeTopBar : UIView
     // Use this for initialization
     void Start()
     {
-        LayOutChild();
+        LayOut();
     }
 
     // Update is called once per frame
@@ -90,8 +90,9 @@ public class UIHomeTopBar : UIView
 
     }
 
-    void LayOutChild()
+   public override void LayOut()
     {
+        base.LayOut();
         Vector2 sizeCanvas = this.frame.size;
         float x = 0, y = 0;
 

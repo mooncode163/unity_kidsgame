@@ -91,8 +91,8 @@ public class UIGameBase : UIView
         }
         else
         {
-            if ((LevelManager.main.gameLevel != 0) && ((LevelManager.main.gameLevel % _step) == 0))
-            //if ((LevelManager.main.gameLevel % _step) == 0)
+            // if ((LevelManager.main.gameLevel != 0) && ((LevelManager.main.gameLevel % _step) == 0))
+            if ((LevelManager.main.gameLevel % _step) == 0)
             {
                 isshow = true;
             }
@@ -147,7 +147,7 @@ public class UIGameBase : UIView
         //     objSpriteBg.transform.localScale = new Vector3(scale, scale, 1.0f);
 
         // }
-        AppSceneBase.main.LayoutChild();
+        AppSceneBase.main.LayOut();
     }
 
     public void UpdateLanguage()

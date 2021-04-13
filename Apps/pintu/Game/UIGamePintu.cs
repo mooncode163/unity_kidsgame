@@ -120,7 +120,7 @@ public class UIGamePintu : UIGameBase, IGamePintuDelegate
 
         // OnScreenShot();
 
-        OnUIDidFinish();
+        OnUIDidFinish(1);
 
     }
     // Update is called once per frame

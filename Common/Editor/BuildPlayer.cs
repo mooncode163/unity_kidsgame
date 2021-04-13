@@ -72,8 +72,11 @@ public class BuildPlayer
     [MenuItem(KEY_MENU_ROOT + "/Export Android & iOS")]
     static void PerformAndroidAndiOSBuild()
     {
+        Debug.Log("PerformAndroidAndiOSBuild start ");
         PerformAndroidBuild();
         PerformiPhoneBuild();
+
+        Debug.Log("PerformAndroidAndiOSBuild end ");
     }
     static void ConverIcon()
     {
@@ -186,6 +189,7 @@ public class BuildPlayer
         Debug.Log("BuildiOSPlayer copy gameres start ");
         string src = Resource.dirResourceDataGameRes;
         string dst = Resource.dirProjectXcode + "/Data/Raw/GameRes";
+        FileUtil.DeleteDir(dst);
         FileUtil.CopyDir(src, dst);
         Debug.Log("BuildiOSPlayer copy gameres end ");
     }

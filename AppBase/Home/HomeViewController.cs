@@ -152,7 +152,7 @@ public class HomeViewController : UIViewController
         string source = Source.GDT;//GDT
         if (Common.isiOS)
         {
-            // source = Source.CHSJ;
+            source = Source.ADMOB;
         }
         AdInsert.InitAd(source);
         AdKitCommon.main.ShowAdInsert(100);
